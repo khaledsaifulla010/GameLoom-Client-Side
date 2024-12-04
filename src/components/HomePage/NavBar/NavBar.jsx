@@ -30,14 +30,17 @@ const NavBar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+              className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow border-2"
             >
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Item 2</a>
-              </li>
+              <Link className="font-bold text-base text-center" to={"/login"}>
+                Login
+              </Link>
+              <Link
+                className="font-bold text-base text-center mt-1"
+                to={"/myProfile"}
+              >
+                My Profile
+              </Link>
             </ul>
           </div>
         </div>
