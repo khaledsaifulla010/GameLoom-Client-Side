@@ -1,8 +1,5 @@
-
-import './App.css'
-
+import "./App.css";
 function App() {
-
   return (
     <>
       <h1 className="mt-12 text-center font-1">GameLoom1</h1>
@@ -14,4 +11,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
