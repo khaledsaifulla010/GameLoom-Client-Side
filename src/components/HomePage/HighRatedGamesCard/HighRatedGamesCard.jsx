@@ -1,6 +1,7 @@
 
 
-const HighRatedGamesCard = () => {
+const HighRatedGamesCard = ({game}) => {
+    
     return (
         <div>
             
