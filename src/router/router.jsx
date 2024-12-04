@@ -5,12 +5,13 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    children:[
-        {
-            path:'/',
-            element:<Home></Home>
-        }
-    ]
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+        loader: () => fetch("http://localhost:5000/highratedGames"),
+      },
+    ],
   },
 ]);
 
