@@ -9,7 +9,7 @@ const HighestRatedGames = () => {
   return (
     <div className="font-1 mt-36 mb-72">
       <h1
-        className="text-5xl font-extrabold text-center text-teal-700 border w-[500px] ml-[500px] p-2 rounded-xl border-teal-200 bg-teal-50 animate__animated animate__fadeInDown animate__infinite"
+        className="text-5xl font-extrabold text-center text-teal-700 border w-[500px] ml-[500px] p-2 rounded-xl border-teal-200 bg-teal-50 animate__animated animate__tada animate__infinite"
         style={{ animationDuration: "4s" }}
       >
         Highest Rated Games
