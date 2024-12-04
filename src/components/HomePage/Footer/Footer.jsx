@@ -4,7 +4,7 @@ import { FaYoutubeSquare } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="bg-gray-900 rounded-xl mb-2">
+    <div className="bg-gray-900 rounded-xl mb-2 font-2">
       <footer className="footer text-base-content p-10">
         <aside className="text-white text-center">
           <img className="w-28 rounded-xl ml-16" src={logo} />
