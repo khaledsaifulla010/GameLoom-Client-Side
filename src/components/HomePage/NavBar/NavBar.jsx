@@ -1,31 +1,23 @@
 import logo from "../../../assets/images/logo/websiteLogo.jpg";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 const NavBar = () => {
   return (
     <div className="font-2">
       <div className="navbar bg-base-100">
-        <Link to={"/"} className="flex-1">
-          <img className="w-28 border-2" src={logo} />
+        <Link className="navbar-start">
+          <img className="w-28" src={logo} />
         </Link>
-        <div className="flex-none">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <a>Link</a>
-            </li>
-            <li>
-              <details>
-                <summary>Parent</summary>
-                <ul className="bg-base-100 rounded-t-none p-2">
-                  <li>
-                    <a>Link 1</a>
-                  </li>
-                  <li>
-                    <a>Link 2</a>
-                  </li>
-                </ul>
-              </details>
-            </li>
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1 flex items-center gap-8 font-bold text-lg">
+            <NavLink to={"/"}>Home</NavLink>
+            <NavLink to={"/reviews"}>All Reviews</NavLink>
+            <NavLink to={" /addReview"}>Add Reviews</NavLink>
+            <NavLink to={"/myReviews"}>My Reviews</NavLink>
+            <NavLink to={"/myWatchlist"}>Game WatchList</NavLink>
           </ul>
+        </div>
+        <div className="navbar-end">
+          <a className="btn">Button</a>
         </div>
       </div>
     </div>
