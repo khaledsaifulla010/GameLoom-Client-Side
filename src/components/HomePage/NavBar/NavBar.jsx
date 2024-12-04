@@ -2,7 +2,7 @@ import logo from "../../../assets/images/logo/websiteLogo.jpg";
 import { Link, NavLink } from "react-router-dom";
 const NavBar = () => {
   return (
-    <div className="font-2">
+    <div className="font-2 rounded-xl p-2 border shadow-md hover:shadow-[0px_10px_30px_rgba(0,0,0,0.3)] transition-shadow duration-1000 ease-in-out">
       <div className="navbar bg-base-100">
         <Link className="navbar-start">
           <img className="w-28" src={logo} />
