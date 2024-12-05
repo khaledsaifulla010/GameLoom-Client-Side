@@ -5,16 +5,31 @@ import { useContext, useState } from "react";
 import Lottie from "lottie-react";
 import loginGIF from "../../../../public/loginLottie.json";
 import { AuthContext } from "../../../Providers/AuthProvider/AuthProvider";
-import {toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
-  const { googleSignIn } = useContext(AuthContext);
+  const { googleSignIn, login } = useContext(AuthContext);
 
   const handleGoogleSignIn = () => {
     googleSignIn()
+      .then((result) => {
+        toast.success("Login Successfully", { position: "top-center" });
+      })
+      .catch((error) => {
+        toast.error("Something Went Wrong!", { position: "top-center" });
+      });
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    login(email, password)
       .then((result) => {
         toast.success("Login Successfully", { position: "top-center" });
       })
@@ -35,7 +50,7 @@ const Login = () => {
           </div>
 
           <div className="card bg-base-100 border w-[600px] shadow-lg">
-            <form className="card-body ">
+            <form className="card-body" onSubmit={handleLogin}>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text font-bold text-xl">Email</span>

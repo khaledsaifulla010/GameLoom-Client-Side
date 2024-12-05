@@ -7,7 +7,6 @@ import { AuthContext } from "../../../Providers/AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { updateProfile } from "firebase/auth";
-import { auth } from "../../../firebase/firebase.config";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
