@@ -4,6 +4,8 @@ import { FaUserCircle } from "react-icons/fa";
 import "./NavBar.css";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider/AuthProvider";
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip } from "react-tooltip";
 
 const NavBar = () => {
   const { user } = useContext(AuthContext);
@@ -30,11 +32,15 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <div className="dropdown dropdown-bottom dropdown-end dropdown-hover">
+          <div
+            data-tooltip-id="my-tooltip"
+            data-tooltip-content={user?.displayName}
+            className="dropdown dropdown-bottom dropdown-end dropdown-hover "
+          >
             <div tabIndex={0} role="button">
               {user ? (
                 <img
-                  className="w-14 h-14 border-2 rounded-full"
+                  className="w-16 h-16 border border-dashed border-slate-700 rounded-full p-1 "
                   src={user.photoURL}
                 />
               ) : (
@@ -60,6 +66,7 @@ const NavBar = () => {
                 My Profile
               </Link>
             </ul>
+            <Tooltip id="my-tooltip" />
           </div>
         </div>
       </div>
