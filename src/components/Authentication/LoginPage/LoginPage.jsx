@@ -1,12 +1,26 @@
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Lottie from "lottie-react";
 import loginGIF from "../../../../public/loginLottie.json";
+import { AuthContext } from "../../../Providers/AuthProvider/AuthProvider";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
+
+  const { googleSignIn } = useContext(AuthContext);
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="font-3">
       <div className="w-[1200px] ml-16 rounded-xl  mt-12">
@@ -74,7 +88,10 @@ const LoginPage = () => {
               </Link>
             </div>
             <div className="divider px-9">OR</div>
-            <button className="border p-2 rounded-xl w-[530px] flex items-center gap-2 ml-8 mb-8 mt-2 text-lg shadow-md font-bold transition duration-500 ease-in-out transform hover:scale-105 active:scale-95">
+            <button
+              onClick={handleGoogleSignIn}
+              className="border p-2 rounded-xl w-[530px] flex items-center gap-2 ml-8 mb-8 mt-2 text-lg shadow-md font-bold transition duration-500 ease-in-out transform hover:scale-105 active:scale-95"
+            >
               <FcGoogle className="ml-40 text-2xl mt-1"></FcGoogle>
               Login with Google
             </button>
