@@ -9,7 +9,6 @@ const ComingSoonGamesCard = ({ game }) => {
               src={image}
               alt={name}
               className="object-cover w-full h-full"
-              style={{ opacity: 0.85 }}
             />
             <button className="absolute inset-0 flex items-center justify-center text-white font-bold text-xl bg-black/50 hover:bg-black/70 transition-opacity">
               Coming Soon

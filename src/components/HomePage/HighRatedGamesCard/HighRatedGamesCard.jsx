@@ -1,4 +1,4 @@
-import { Heart, Rating, ThinStar } from "@smastrom/react-rating";
+import { Heart, Rating } from "@smastrom/react-rating";
 
 import "@smastrom/react-rating/style.css";
 
