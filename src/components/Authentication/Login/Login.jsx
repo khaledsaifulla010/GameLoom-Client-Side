@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useContext, useState } from "react";
@@ -12,11 +12,13 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const { googleSignIn, login } = useContext(AuthContext);
+  const redirects = useNavigate();
 
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then((result) => {
         toast.success("Login Successfully", { position: "top-center" });
+        redirects("/");
       })
       .catch((error) => {
         toast.error("Something Went Wrong!", { position: "top-center" });
@@ -41,9 +43,7 @@ const Login = () => {
   return (
     <div className="font-3">
       <div className="w-[1200px] ml-16 rounded-xl  mt-12">
-        <h1
-          className="  text-5xl font-bold  bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-600 -mb-4 p-8 ml-[500px]"
-        >
+        <h1 className="  text-5xl font-bold  bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-600 -mb-4 p-8 ml-[500px]">
           Please Login
         </h1>
         <div className="flex items-center justify-between  ">
