@@ -1,34 +1,39 @@
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 import { createContext } from "react";
 import { auth } from "../../firebase/firebase.config";
 
+export const AuthContext = createContext();
 
-export const AuthContext = createContext()
+const googleProvider = new GoogleAuthProvider();
 
-const googleProvider = new GoogleAuthProvider()
+const AuthProvider = ({ children }) => {
+  // GOOGLE SIGN IN //
+  const googleSignIn = () => {
+    return signInWithPopup(auth, googleProvider);
+  };
 
-const AuthProvider = ({children}) => {
+  // REGISTER WITH EMAIL & PASSWORD //
 
+  const register = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
 
-    // GOOGLE SIGN IN //
-    const googleSignIn = ()=>{
-        return signInWithPopup(auth,googleProvider)
-    }
+//   const updateProfile=()=>{
 
+//   }
 
-    
+  const authInfo = {
+    googleSignIn,
+    register,
+  };
 
-
-
-    const authInfo = {
-      googleSignIn,
-    };
-
-
-
-    return ( 
-        <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
-    );
+  return (
+    <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
+  );
 };
 
 export default AuthProvider;

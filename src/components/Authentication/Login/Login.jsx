@@ -5,7 +5,7 @@ import { useContext, useState } from "react";
 import Lottie from "lottie-react";
 import loginGIF from "../../../../public/loginLottie.json";
 import { AuthContext } from "../../../Providers/AuthProvider/AuthProvider";
-import { ToastContainer, toast } from "react-toastify";
+import {toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {

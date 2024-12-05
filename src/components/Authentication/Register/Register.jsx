@@ -1,12 +1,35 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Lottie from "lottie-react";
-
 import registerLottie from "../../../../public/registerLottie.json";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Providers/AuthProvider/AuthProvider";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const Register= () => {
+const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
+
+  const { register } = useContext(AuthContext);
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const photo_URL = e.target.photo_URL.value;
+    const password = e.target.password.value;
+
+    // Register
+
+    register(email, password)
+      .then((result) => {
+        toast.success("Register Successfully", { position: "top-center" });
+      })
+      .catch((error) => {
+        toast.error("Something Went Wrong!", { position: "top-center" });
+      });
+  };
 
   return (
     <div className="font-3">
@@ -23,7 +46,7 @@ const Register= () => {
           </div>
 
           <div className="card bg-base-100 border w-[600px] shadow-lg">
-            <form className="card-body">
+            <form className="card-body" onSubmit={handleRegister}>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text font-bold text-xl">Name</span>
