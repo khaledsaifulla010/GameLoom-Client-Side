@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
-
 import Lottie from "lottie-react";
 import loginGIF from "../../../../public/loginLottie.json";
 
