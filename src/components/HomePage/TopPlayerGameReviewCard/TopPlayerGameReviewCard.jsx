@@ -1,5 +1,13 @@
+import { Heart, Rating } from "@smastrom/react-rating";
+
+import "@smastrom/react-rating/style.css";
 const TopPlayerGameReviewCard = ({ singleReview }) => {
   const { gameName, image, playerName, rating, review } = singleReview;
+  const myStyles = {
+    itemShapes: Heart,
+    activeFillColor: "#FF007F",
+    inactiveFillColor: "#FFC0CB",
+  };
 
   return (
     <div>
@@ -20,15 +28,20 @@ const TopPlayerGameReviewCard = ({ singleReview }) => {
                   Player: <span className="text-black">{playerName}</span>
                 </p>
               </div>
-              <div className="mt-4 text-lg text-gray-600 ">
+              <div className="mt-2 text-lg text-gray-600 ">
                 <p className="mt-2 font-light italic">"{review}"</p>
               </div>
               <div className="divider"></div>
-              <div>
-                <p className="text-xl font-semibold flex items-center justify-between">
-                  {" "}
+              <div className="flex items-center gap-4 justify-between">
+                <Rating
+                  style={{ maxWidth: 160 }}
+                  value={rating}
+                  itemStyles={myStyles}
+                  readOnly
+                />
+                <div className="border p-1 rounded-md w-10 font-semibold text-rose-600 bg-rose-100 border-rose-300 text-center">
                   {rating}
-                </p>
+                </div>
               </div>
             </div>
           </figure>

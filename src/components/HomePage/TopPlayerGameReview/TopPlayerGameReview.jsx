@@ -11,9 +11,9 @@ const TopPlayerGameReview = () => {
   }, []);
 
   return (
-    <div className="font-1 mt-36 mb-72">
+    <div className="font-1 mt-36 mb-24">
       <h1
-        className="text-5xl font-extrabold text-center text-sky-700 border w-[650px] ml-[430px] p-2 rounded-xl border-sky-200 bg-sky-50 animate__animated animate__tada animate__infinite"
+        className="text-5xl font-extrabold text-center text-sky-700 border w-[650px] ml-[430px] p-2 rounded-xl border-sky-200 bg-sky-50 animate__animated animate__fadeIn animate__infinite"
         style={{ animationDuration: "4s" }}
       >
         Top Player Recommendations
