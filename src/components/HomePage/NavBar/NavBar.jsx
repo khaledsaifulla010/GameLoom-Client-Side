@@ -36,7 +36,10 @@ const NavBar = () => {
               tabIndex={0}
               className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow border-2"
             >
-              <Link className="font-bold text-base text-center" to={"/login"}>
+              <Link
+                to={"/login"}
+                className="border p-1 w-full rounded-xl text-purple-500 bg-purple-200 border-purple-300 font-bold text-lg shadow-md transition duration-500 ease-in-out transform hover:scale-105 active:scale-95 text-center"
+              >
                 Login
               </Link>
               <Link
