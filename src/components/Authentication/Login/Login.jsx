@@ -34,6 +34,7 @@ const Login = () => {
     login(email, password)
       .then((result) => {
         toast.success("Login Successfully", { position: "top-center" });
+        redirects("/");
       })
       .catch((error) => {
         toast.error("Something Went Wrong!", { position: "top-center" });
