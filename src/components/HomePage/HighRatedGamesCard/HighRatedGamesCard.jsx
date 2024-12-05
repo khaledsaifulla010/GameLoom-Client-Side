@@ -13,7 +13,7 @@ const HighRatedGamesCard = ({ game }) => {
 
   return (
     <div>
-      <div class="card bg-base-100 w-[420px] h-[600px] border-2 border-slate-300">
+      <div class="card bg-base-100 w-[420px] h-[600px] border-2 border-slate-300 shadow-md transition-transform duration-1000 ease-in-out transform hover:shadow-[0px_15px_35px_rgba(0,0,0,0.5)] hover:scale-105">
         <figure>
           <img src={image} />
         </figure>

@@ -9,6 +9,7 @@ const ComingSoonGames = () => {
       .then((res) => res.json())
       .then((data) => setGames(data));
   }, []);
+  console.log(games);
   return (
     <div className="font-1 mt-36 mb-72">
       <h1
