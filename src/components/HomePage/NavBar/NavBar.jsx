@@ -6,9 +6,16 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider/AuthProvider";
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
+import { toast } from "react-toastify";
 
 const NavBar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logoutUser } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logoutUser().then(() => {
+      toast.success("Successfully Logged Out !", { position: "top-center" });
+    });
+  };
 
   return (
     <div className="font-2 rounded-xl p-2 border shadow-md hover:shadow-[0px_10px_30px_rgba(0,0,0,0.3)] transition-shadow duration-1000 ease-in-out">
@@ -65,6 +72,14 @@ const NavBar = () => {
               >
                 My Profile
               </Link>
+              {user && (
+                <button
+                  onClick={handleLogout}
+                  className="border p-1 w-full rounded-xl text-red-500 bg-red-200 border-red-300 font-bold text-lg shadow-md transition duration-500 ease-in-out transform hover:scale-105 active:scale-95 text-center"
+                >
+                  Logout
+                </button>
+              )}
             </ul>
             <Tooltip id="my-tooltip" />
           </div>
