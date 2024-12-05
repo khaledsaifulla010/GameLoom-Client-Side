@@ -9,11 +9,11 @@ const ComingSoonGames = () => {
       .then((res) => res.json())
       .then((data) => setGames(data));
   }, []);
-  console.log(games);
+
   return (
-    <div className="font-1 mt-36 mb-72">
+    <div className="font-1 mt-36">
       <h1
-        className="text-5xl font-extrabold text-center text-orange-700 border w-[600px] ml-[450px] p-2 rounded-xl border-orange-200 bg-orange-50 animate__animated animate__tada animate__infinite"
+        className="text-5xl font-extrabold text-center text-orange-600 border w-[600px] ml-[450px] p-2 rounded-xl border-orange-200 bg-orange-50 animate__animated animate__tada animate__infinite"
         style={{ animationDuration: "4s" }}
       >
         Upcoming Games Spotlight

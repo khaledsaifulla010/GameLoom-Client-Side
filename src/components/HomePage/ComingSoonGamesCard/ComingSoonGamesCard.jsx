@@ -1,6 +1,5 @@
 const ComingSoonGamesCard = ({ game }) => {
   const { name, image } = game;
-  console.log(name, image);
   return (
     <div>
       <div className="flex justify-center items-center">
