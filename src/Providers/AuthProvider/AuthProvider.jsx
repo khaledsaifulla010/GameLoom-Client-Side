@@ -22,9 +22,6 @@ const AuthProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-//   const updateProfile=()=>{
-
-//   }
 
   const authInfo = {
     googleSignIn,
