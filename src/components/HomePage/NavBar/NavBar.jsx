@@ -2,8 +2,12 @@ import logo from "../../../assets/images/logo/websiteLogo.jpg";
 import { Link, NavLink } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import "./NavBar.css";
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider/AuthProvider";
 
 const NavBar = () => {
+  const { user } = useContext(AuthContext);
+
   return (
     <div className="font-2 rounded-xl p-2 border shadow-md hover:shadow-[0px_10px_30px_rgba(0,0,0,0.3)] transition-shadow duration-1000 ease-in-out">
       <div className="navbar bg-base-100">
@@ -28,9 +32,16 @@ const NavBar = () => {
         <div className="navbar-end">
           <div className="dropdown dropdown-bottom dropdown-end dropdown-hover">
             <div tabIndex={0} role="button">
-              <h1 className="text-5xl">
-                <FaUserCircle />
-              </h1>
+              {user ? (
+                <img
+                  className="w-14 h-14 border-2 rounded-full"
+                  src={user.photoURL}
+                />
+              ) : (
+                <h1 className="text-5xl">
+                  <FaUserCircle />
+                </h1>
+              )}
             </div>
             <ul
               tabIndex={0}
