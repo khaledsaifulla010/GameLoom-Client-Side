@@ -1,9 +1,10 @@
 import { Heart, Rating } from "@smastrom/react-rating";
 
 import "@smastrom/react-rating/style.css";
+import { Link } from "react-router-dom";
 
 const HighRatedGamesCard = ({ game }) => {
-  const { name, rating, image } = game;
+  const { _id, name, rating, image } = game;
 
   const myStyles = {
     itemShapes: Heart,
@@ -31,9 +32,12 @@ const HighRatedGamesCard = ({ game }) => {
             </div>
           </div>
           <div class="card-actions ">
-            <button class="border rounded-xl p-2 text-blue-700 bg-blue-100 border-blue-300 w-full mt-4 font-bold shadow-md hover:shadow-[0px_10px_30px_rgba(0,0,0,0.3)] transition-shadow duration-300 ease-in-out text-base">
+            <Link
+              to={`/highratedGames/${_id}`}
+              class="border rounded-xl p-2 text-blue-700 bg-blue-100 border-blue-300 w-full mt-4 font-bold shadow-md hover:shadow-[0px_10px_30px_rgba(0,0,0,0.3)] transition-shadow duration-300 ease-in-out text-base text-center"
+            >
               Explore Details
-            </button>
+            </Link>
           </div>
         </div>
       </div>
