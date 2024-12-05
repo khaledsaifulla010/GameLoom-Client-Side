@@ -10,17 +10,16 @@ const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   return (
     <div className="font-3">
-      <div className="w-[1200px] ml-2 rounded-xl mb-36 mt-12">
-        <h1 className="  text-5xl font-bold  bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-600 mb-4 p-8 ml-[600px]">
+      <div className="w-[1200px] ml-16 rounded-xl  mt-12">
+        <h1 className="  text-5xl font-bold  bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-600 -mb-4 p-8 ml-[500px]">
           Please Login
         </h1>
         <div className="flex items-center justify-between  ">
           <div>
-            {/* <img className="w-[500px]" src={loginGIF} /> */}
-            <Lottie className="w-[700px]" animationData={loginGIF}></Lottie>
+            <Lottie className="w-[600px]" animationData={loginGIF}></Lottie>
           </div>
 
-          <div className="card bg-base-100 border w-[600px] ">
+          <div className="card bg-base-100 border w-[600px] shadow-lg">
             <form className="card-body ">
               <div className="form-control">
                 <label className="label">
@@ -68,16 +67,16 @@ const LoginPage = () => {
               </div>
             </form>
             <div className="ml-8 -mt-4 flex items-center gap-2 p-2">
-              <h1 className="font-bold text-slate-600 text-lg">
+              <h1 className="font-bold text-slate-600 text-base">
                 Don't have any account?
               </h1>
               <Link to={"/register"}>
-                <h1 className="font-bold text-green-600 text-lg">Register</h1>
+                <h1 className="font-bold text-green-600 text-base">Register</h1>
               </Link>
             </div>
             <div className="divider px-9">OR</div>
-            <button className="border p-2 rounded-xl w-[440px] flex items-center gap-2 ml-8 mb-8 mt-2 text-lg shadow-md font-bold transition duration-500 ease-in-out transform hover:scale-105 active:scale-95">
-              <FcGoogle className="ml-28 text-2xl mt-1"></FcGoogle>
+            <button className="border p-2 rounded-xl w-[530px] flex items-center gap-2 ml-8 mb-8 mt-2 text-lg shadow-md font-bold transition duration-500 ease-in-out transform hover:scale-105 active:scale-95">
+              <FcGoogle className="ml-40 text-2xl mt-1"></FcGoogle>
               Login with Google
             </button>
           </div>
