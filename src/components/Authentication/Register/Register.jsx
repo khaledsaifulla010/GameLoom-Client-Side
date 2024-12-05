@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Lottie from "lottie-react";
 import registerLottie from "../../../../public/registerLottie.json";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -12,6 +12,7 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const { register } = useContext(AuthContext);
+  const redirects = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -37,6 +38,7 @@ const Register = () => {
         toast.success("Register Successfully!", {
           position: "top-center",
         });
+        redirects("/");
       })
       .catch((error) => {
         toast.error("Something Went Wrong!", { position: "top-center" });
