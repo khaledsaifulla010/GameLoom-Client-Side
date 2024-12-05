@@ -2,8 +2,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainLayout from "../layout/MainLayout/MainLayout";
 import Home from "../components/HomePage/Home/Home";
 import SingleHighestRatedGameDetails from "../components/HomePage/SingleHighestRatedGameDetails/SingleHighestRatedGameDetails";
-import LoginPage from "../components/Authentication/LoginPage/LoginPage";
-import RegisterPage from "../components/Authentication/LoginPage/RegisterPage/RegisterPage";
+import Login from "../components/Authentication/Login/Login";
+import Register from "../components/Authentication/Register/Register";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,12 +22,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <LoginPage></LoginPage>,
+        element: <Login></Login>,
         
       },
       {
         path: "/register",
-        element: <RegisterPage></RegisterPage>,
+        element: <Register></Register>,
         
       },
     ],

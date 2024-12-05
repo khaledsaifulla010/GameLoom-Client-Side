@@ -5,8 +5,10 @@ import { useContext, useState } from "react";
 import Lottie from "lottie-react";
 import loginGIF from "../../../../public/loginLottie.json";
 import { AuthContext } from "../../../Providers/AuthProvider/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const LoginPage = () => {
+const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const { googleSignIn } = useContext(AuthContext);
@@ -14,10 +16,10 @@ const LoginPage = () => {
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then((result) => {
-        console.log(result.user);
+        toast.success("Login Successfully", { position: "top-center" });
       })
       .catch((error) => {
-        console.log(error);
+        toast.error("Something Went Wrong!", { position: "top-center" });
       });
   };
 
@@ -102,4 +104,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Login;

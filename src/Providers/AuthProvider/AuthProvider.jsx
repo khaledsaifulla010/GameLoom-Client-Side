@@ -9,10 +9,14 @@ const googleProvider = new GoogleAuthProvider()
 
 const AuthProvider = ({children}) => {
 
+
+    // GOOGLE SIGN IN //
     const googleSignIn = ()=>{
         return signInWithPopup(auth,googleProvider)
     }
 
+
+    
 
 
 
