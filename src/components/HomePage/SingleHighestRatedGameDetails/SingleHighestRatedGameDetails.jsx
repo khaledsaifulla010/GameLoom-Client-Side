@@ -22,7 +22,7 @@ const SingleHighestRatedGameDetails = () => {
   };
 
   return (
-    <div>
+    <div className="font-5">
       <h1 className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-600 to-gray-600">
         Review Details of {gameName}
       </h1>

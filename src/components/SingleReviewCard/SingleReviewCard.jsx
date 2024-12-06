@@ -1,6 +1,6 @@
 import { Heart, Rating } from "@smastrom/react-rating";
 import { useLoaderData } from "react-router-dom";
-
+import { BiSolidLike } from "react-icons/bi";
 const SingleReviewCard = () => {
   const singleReview = useLoaderData();
 
@@ -20,9 +20,9 @@ const SingleReviewCard = () => {
     inactiveFillColor: "#FFC0CB",
   };
   return (
-    <div>
+    <div className="font-5">
       <h1 className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-600 to-gray-600">
-        Review Details of {gameName}
+        Review Details of "{gameName}"
       </h1>
       <div className="flex justify-center items-center p-8 mt-12 mb-24">
         <div className="card bg-slate-100 border-2 border-gray-300 w-[1200px] h-[550px] shadow-lg transition-transform duration-500 ease-in-out transform hover:scale-105">
@@ -74,9 +74,10 @@ const SingleReviewCard = () => {
                 className="border rounded-xl p-2 text-violet-700 bg-violet-200
               border-violet-300 w-full mt-6 font-bold shadow-md
               hover:shadow-[0px_10px_30px_rgba(0,0,0,0.3)] transition-shadow
-              duration-300 ease-in-out text-base text-center"
+              duration-300 ease-in-out text-lg  flex items-center justify-center gap-2"
               >
                 Add to WatchList
+                <BiSolidLike />
               </button>
             </div>
           </figure>

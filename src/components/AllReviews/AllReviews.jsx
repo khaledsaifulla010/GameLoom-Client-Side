@@ -6,7 +6,7 @@ const AllReviews = () => {
   console.log(reviews);
 
   return (
-    <div className="mt-12 mb-24">
+    <div className="mt-12 mb-24  font-4">
       <h1 className="mt-4 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-teal-600">
         All Reviews
       </h1>
