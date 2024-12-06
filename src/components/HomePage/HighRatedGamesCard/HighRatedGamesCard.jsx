@@ -34,7 +34,7 @@ const HighRatedGamesCard = ({ game }) => {
           <div class="card-actions ">
             <Link
               to={`/highratedGames/${_id}`}
-              class="border rounded-xl p-2 text-blue-700 bg-blue-100 border-blue-300 w-full mt-4 font-bold shadow-md hover:shadow-[0px_10px_30px_rgba(0,0,0,0.3)] transition-shadow duration-300 ease-in-out text-base text-center"
+              className="border rounded-xl p-2 text-blue-700 bg-blue-100 border-blue-300 w-full mt-4 font-bold shadow-md hover:shadow-[0px_10px_30px_rgba(0,0,0,0.3)] transition-shadow duration-300 ease-in-out text-base text-center"
             >
               Explore Details
             </Link>
