@@ -15,7 +15,7 @@ const AddReviewPage = () => {
     const name = e.target.name.value;
     const gameName = e.target.gameName.value;
     const genreSelect = e.target.genreSelect.value;
-    const pulicationYear = e.target.pulicationYear.value;
+    const publicationYear = e.target.pulicationYear.value;
     const email = e.target.email.value;
     const reviewDescription = e.target.reviewDescription.value;
     const rating = e.target.rating.value;
@@ -25,7 +25,7 @@ const AddReviewPage = () => {
       name,
       gameName,
       genreSelect,
-      pulicationYear,
+      publicationYear,
       email,
       reviewDescription,
       rating,
@@ -120,7 +120,7 @@ const AddReviewPage = () => {
                   </label>
                   <input
                     type="number"
-                    name="pulicationYear"
+                    name="publicationYear"
                     className="input input-bordered shadow-md transition duration-300 ease-in-out hover:shadow-lg"
                     min="1980"
                     max={new Date().getFullYear()}
