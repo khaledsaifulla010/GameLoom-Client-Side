@@ -35,7 +35,7 @@ const GameWatchList = () => {
             <div className="rounded-lg shadow-lg border border-gray-300">
               <table className="table w-full border-collapse">
                 {/* Head */}
-                <thead className="bg-gray-700 text-white">
+                <thead className="bg-gray-700 text-white text-lg font-extrabold">
                   <tr>
                     <th className="text-center py-3 px-4">SL/No.</th>
                     <th className="text-center py-3 px-4">Image</th>
@@ -46,40 +46,54 @@ const GameWatchList = () => {
                   </tr>
                 </thead>
                 <tbody className="text-gray-700">
-                  <tr className="hover:bg-gray-100">
-                    <td className="text-center py-3 px-4 font-bold text-green-600">
-                      1
-                    </td>
-                    <td className="text-center py-3 px-4">
-                      <div className="avatar flex justify-center">
-                        <div className="mask mask-squircle h-12 w-12">
-                          <img
-                            src="https://via.placeholder.com/50"
-                            alt="Game"
-                          />
+                  {watchList.map((game, index) => (
+                    <tr key={index} className="hover:bg-gray-100">
+                      <td className="text-center py-3 px-4 font-bold text-green-600 text-base flex justify-center items-center mt-8">
+                        <span className="border p-4 rounded-full bg-green-50 border-green-100 w-10 h-10 flex items-center justify-center">
+                          {index + 1}
+                        </span>
+                      </td>
+
+                      <td className="text-center py-3 px-4">
+                        <div className="avatar flex justify-center">
+                          <div className="mask rounded-lg h-24 w-24">
+                            <img src={game.gameThumbnail} />
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                    <td className="text-center py-3 px-4 text-blue-500 font-semibold">
-                      Zemlak, Daniel, and Leannon
-                    </td>
-                    <td className="text-center py-3 px-4 text-purple-500 font-medium">
-                      Adventure
-                    </td>
-                    <td className="text-center py-3 px-4 font-bold text-yellow-500">
-                      4.5
-                    </td>
-                    <td className="text-center py-3 px-4 font-bold text-red-500">
-                      2023
-                    </td>
-                  </tr>
+                      </td>
+
+                      <td className="text-center py-3 px-4 text-blue-500 font-bold text-base">
+                        <span className="border p-2 rounded-lg bg-blue-50 border-blue-100">
+                          {game.gameName}
+                        </span>
+                      </td>
+
+                      <td className="text-center py-3 px-4 text-base text-purple-500 font-bold">
+                        <span className="border p-2 rounded-lg bg-purple-50 border-purple-100">
+                          {game.genreSelect}
+                        </span>
+                      </td>
+
+                      <td className="text-center py-3 px-4 text-base font-bold text-orange-600">
+                        <span className="border p-2 rounded-lg bg-orange-50 border-orange-100">
+                          {game.rating}
+                        </span>
+                      </td>
+
+                      <td className="text-center py-3 px-4 text-base font-bold text-red-600">
+                        <span className="border p-2 rounded-lg bg-red-50 border-red-100">
+                          {game.publicationYear}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
           </div>
         </div>
       ) : (
-        <h1 className="text-center text-gray-500 font-black text-4xl">
+        <h1 className="text-center text-gray-500 font-black text-4xl mt-12 mb-24">
           Watchlist is Empty!
         </h1>
       )}
