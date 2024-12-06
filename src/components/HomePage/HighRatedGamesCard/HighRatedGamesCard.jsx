@@ -4,7 +4,7 @@ import "@smastrom/react-rating/style.css";
 import { Link } from "react-router-dom";
 
 const HighRatedGamesCard = ({ game }) => {
-  const { _id, name, rating, image } = game;
+  const { _id, gameName, rating, gameThumbnail } = game;
 
   const myStyles = {
     itemShapes: Heart,
@@ -16,10 +16,10 @@ const HighRatedGamesCard = ({ game }) => {
     <div>
       <div class="card bg-base-100 w-[420px] h-[600px] border-2 border-slate-300 shadow-md transition-transform duration-1000 ease-in-out transform hover:shadow-[0px_15px_35px_rgba(0,0,0,0.5)] hover:scale-105">
         <figure>
-          <img src={image} />
+          <img src={gameThumbnail} />
         </figure>
         <div class="card-body">
-          <h2 class="text-3xl font-extrabold">{name}</h2>
+          <h2 class="text-3xl font-extrabold">{gameName}</h2>
           <div className="flex items-center gap-4 mt-6 justify-between">
             <Rating
               style={{ maxWidth: 160 }}

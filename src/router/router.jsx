@@ -15,7 +15,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/highratedGames"),
+        loader: () => fetch("http://localhost:5000/reviews"),
       },
       {
         path: "/highratedGames/:id",
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
           <SingleHighestRatedGameDetails></SingleHighestRatedGameDetails>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/highratedGames/${params.id}`),
+          fetch(`http://localhost:5000/reviews/${params.id}`),
       },
       {
         path: "/login",
