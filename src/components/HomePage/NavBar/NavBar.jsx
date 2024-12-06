@@ -45,10 +45,10 @@ const NavBar = () => {
             className="dropdown dropdown-bottom dropdown-end dropdown-hover "
           >
             <div tabIndex={0} role="button">
-              {user ? (
+              {user && user?.photoURL ? (
                 <img
-                  className="w-16 h-16 border border-dashed border-slate-700 rounded-full p-1 "
-                  src={user.photoURL}
+                  className="w-16 h-16 border border-dashed border-slate-700 rounded-full p-1"
+                  src={user?.photoURL}
                 />
               ) : (
                 <h1 className="text-5xl">

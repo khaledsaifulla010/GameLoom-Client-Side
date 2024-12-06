@@ -34,7 +34,6 @@ const GameWatchList = () => {
           <div>
             <div className="rounded-lg shadow-lg border border-gray-300">
               <table className="table w-full border-collapse">
-                {/* Head */}
                 <thead className="bg-gray-700 text-white text-lg font-extrabold">
                   <tr>
                     <th className="text-center py-3 px-4">SL/No.</th>
