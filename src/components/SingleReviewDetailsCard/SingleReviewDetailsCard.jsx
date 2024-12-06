@@ -1,9 +1,8 @@
 import { Heart, Rating } from "@smastrom/react-rating";
 import { useLoaderData } from "react-router-dom";
 import { BiSolidLike } from "react-icons/bi";
-const SingleReviewCard = () => {
+const SingleReviewDetailsCard = () => {
   const singleReview = useLoaderData();
-
   const {
     name,
     email,
@@ -14,11 +13,29 @@ const SingleReviewCard = () => {
     genreSelect,
     publicationYear,
   } = singleReview;
+
+  const singleGameDetails = singleReview;
+
   const myStyles = {
     itemShapes: Heart,
     activeFillColor: "#FF007F",
     inactiveFillColor: "#FFC0CB",
   };
+
+  const handleAddToWatchList = () => {
+    fetch("http://localhost:5000/myWatchlist", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(singleGameDetails),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
+
   return (
     <div className="font-5">
       <h1 className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-600 to-gray-600">
@@ -71,6 +88,7 @@ const SingleReviewCard = () => {
                 {reviewDescription}
               </p>
               <button
+                onClick={handleAddToWatchList}
                 className="border rounded-xl p-2 text-violet-700 bg-violet-200
               border-violet-300 w-full mt-6 font-bold shadow-md
               hover:shadow-[0px_10px_30px_rgba(0,0,0,0.3)] transition-shadow
@@ -87,4 +105,4 @@ const SingleReviewCard = () => {
   );
 };
 
-export default SingleReviewCard;
+export default SingleReviewDetailsCard;

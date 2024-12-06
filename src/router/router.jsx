@@ -7,7 +7,7 @@ import Register from "../components/Authentication/Register/Register";
 import AddReviewPage from "../components/AddReviewPage/AddReviewPage";
 import PrivateRoute from "../privateRoute/PrivateRoute";
 import AllReviews from "../components/AllReviews/AllReviews";
-import SingleReviewCard from "../components/SingleReviewCard/SingleReviewCard";
+import SingleReviewDetailsCard from "../components/SingleReviewDetailsCard/SingleReviewDetailsCard";
 import GameWatchList from "../components/GameWatchList/GameWatchList";
 const router = createBrowserRouter([
   {
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/reviews/:id",
-        element: <SingleReviewCard></SingleReviewCard>,
+        element: <SingleReviewDetailsCard></SingleReviewDetailsCard>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/reviews/${params.id}`),
       },
