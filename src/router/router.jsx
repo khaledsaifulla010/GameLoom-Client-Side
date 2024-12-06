@@ -57,6 +57,7 @@ const router = createBrowserRouter([
       {
         path: "/myWatchlist",
         element: <GameWatchList></GameWatchList>,
+       
       },
     ],
   },

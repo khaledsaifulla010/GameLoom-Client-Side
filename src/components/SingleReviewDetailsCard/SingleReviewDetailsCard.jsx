@@ -2,7 +2,12 @@ import { Heart, Rating } from "@smastrom/react-rating";
 import { useLoaderData } from "react-router-dom";
 import { BiSolidLike } from "react-icons/bi";
 import { toast } from "react-toastify";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 const SingleReviewDetailsCard = () => {
+  const { user } = useContext(AuthContext);
+  const { email: userEmail, displayName } = user;
+
   const singleReview = useLoaderData();
   const {
     name,
@@ -15,7 +20,7 @@ const SingleReviewDetailsCard = () => {
     publicationYear,
   } = singleReview;
 
-  const singleGameDetails = singleReview;
+  const singleGameDetails = { ...singleReview, userEmail, displayName };
 
   const myStyles = {
     itemShapes: Heart,
@@ -24,7 +29,7 @@ const SingleReviewDetailsCard = () => {
   };
 
   const handleAddToWatchList = () => {
-    fetch(`http://localhost:5000/myWatchlist?email=${email}`, {
+    fetch(`http://localhost:5000/myWatchlist?userEmail=${userEmail}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
