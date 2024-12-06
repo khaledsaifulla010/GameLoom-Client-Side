@@ -9,6 +9,7 @@ import PrivateRoute from "../privateRoute/PrivateRoute";
 import AllReviews from "../components/AllReviews/AllReviews";
 import SingleReviewDetailsCard from "../components/SingleReviewDetailsCard/SingleReviewDetailsCard";
 import GameWatchList from "../components/GameWatchList/GameWatchList";
+import MyReviews from "../components/MyReviews/MyReviews";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -57,8 +58,14 @@ const router = createBrowserRouter([
       {
         path: "/myWatchlist/:userEmail",
         element: <GameWatchList></GameWatchList>,
-        loader: ({params}) =>
-          fetch(`http://localhost:5000/myWatchlist?userEmail=${params.userEmail}`),
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:5000/myWatchlist?userEmail=${params.userEmail}`
+          ),
+      },
+      {
+        path: "/myReviews",
+        element: <MyReviews></MyReviews>,
       },
     ],
   },
