@@ -1,7 +1,11 @@
 import Lottie from "lottie-react";
 import reviewLottie from "../../../public/reviewLottie.json";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 
 const AddReviewPage = () => {
+  const { user } = useContext(AuthContext);
+
   const handleAddReview = (e) => {
     e.preventDefault();
 
@@ -53,8 +57,9 @@ const AddReviewPage = () => {
                   <input
                     type="text"
                     name="name"
-                    placeholder="Enter Your Name"
-                    className="input input-bordered shadow-md transition duration-300 ease-in-out hover:shadow-lg"
+                    defaultValue={user.displayName}
+                    readOnly
+                    className="input input-bordered shadow-md transition duration-300 ease-in-out hover:shadow-lg text-slate-400 font-semibold"
                     required
                   />
                 </div>
@@ -116,8 +121,9 @@ const AddReviewPage = () => {
                   <input
                     type="email"
                     name="email"
-                    placeholder="Email"
-                    className="input input-bordered shadow-md transition duration-300 ease-in-out hover:shadow-lg"
+                    defaultValue={user.email}
+                    readOnly
+                    className="input input-bordered shadow-md transition duration-300 ease-in-out hover:shadow-lg text-slate-400 font-semibold"
                     required
                   />
                 </div>
