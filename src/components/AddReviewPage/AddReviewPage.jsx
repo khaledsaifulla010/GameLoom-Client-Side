@@ -2,6 +2,15 @@ import Lottie from "lottie-react";
 import reviewLottie from "../../../public/reviewLottie.json";
 
 const AddReviewPage = () => {
+  // const handleReview = (e) => {
+  //   e.preventDefault();
+
+  //   const name = e.target.name.value;
+  //   const email = e.target.email.value;
+  //   const photo_URL = e.target.photo_URL.value;
+  //   const password = e.target.password.value;
+  // };
+
   return (
     <div className="mt-12 mb-72 font-5">
       <h1 className="mt-4 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-pink-600">
@@ -53,9 +62,10 @@ const AddReviewPage = () => {
                     className="select select-bordered w-full shadow-md transition duration-300 ease-in-out hover:shadow-lg"
                     name="select"
                   >
-                    <option selected>Who shot first?</option>
-                    <option>Han Solo</option>
-                    <option>Greedo</option>
+                    <option selected>Enter Games Genre</option>
+                    <option>Action</option>
+                    <option>RPG</option>
+                    <option>Adventure</option>
                   </select>
                 </div>
                 {/* Publication Year */}
