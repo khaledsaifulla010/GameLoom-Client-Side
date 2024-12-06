@@ -5,6 +5,7 @@ import SingleHighestRatedGameDetails from "../components/HomePage/SingleHighestR
 import Login from "../components/Authentication/Login/Login";
 import Register from "../components/Authentication/Register/Register";
 import AddReviewPage from "../components/AddReviewPage/AddReviewPage";
+import PrivateRoute from "../privateRoute/PrivateRoute";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,7 +34,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/addReview",
-        element: <AddReviewPage></AddReviewPage>,
+        element: (
+          <PrivateRoute>
+            <AddReviewPage></AddReviewPage>
+          </PrivateRoute>
+        ),
       },
     ],
   },
