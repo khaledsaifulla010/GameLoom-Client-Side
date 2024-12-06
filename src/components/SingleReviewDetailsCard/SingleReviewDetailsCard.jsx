@@ -1,6 +1,7 @@
 import { Heart, Rating } from "@smastrom/react-rating";
 import { useLoaderData } from "react-router-dom";
 import { BiSolidLike } from "react-icons/bi";
+import { toast } from "react-toastify";
 const SingleReviewDetailsCard = () => {
   const singleReview = useLoaderData();
   const {
@@ -32,7 +33,9 @@ const SingleReviewDetailsCard = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        toast.success(`Added ${gameName} in WatchList`, {
+          position: "top-center",
+        });
       });
   };
 
