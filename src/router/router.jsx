@@ -4,6 +4,7 @@ import Home from "../components/HomePage/Home/Home";
 import SingleHighestRatedGameDetails from "../components/HomePage/SingleHighestRatedGameDetails/SingleHighestRatedGameDetails";
 import Login from "../components/Authentication/Login/Login";
 import Register from "../components/Authentication/Register/Register";
+import AddReviewPage from "../components/AddReviewPage/AddReviewPage";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -16,19 +17,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/highratedGames/:id",
-        element: <SingleHighestRatedGameDetails></SingleHighestRatedGameDetails>,
+        element: (
+          <SingleHighestRatedGameDetails></SingleHighestRatedGameDetails>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/highratedGames/${params.id}`),
       },
       {
         path: "/login",
         element: <Login></Login>,
-        
       },
       {
         path: "/register",
         element: <Register></Register>,
-        
+      },
+      {
+        path: "/addReview",
+        element: <AddReviewPage></AddReviewPage>,
       },
     ],
   },

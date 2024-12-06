@@ -31,7 +31,7 @@ const NavBar = () => {
           <ul className="menu menu-horizontal px-1 flex items-center gap-8 font-bold text-base">
             <NavLink to={"/"}>Home</NavLink>
             <NavLink to={"/reviews"}>All Reviews</NavLink>
-            <NavLink to={" /addReview"}>Add Reviews</NavLink>
+            <NavLink to={"/addReview"}>Add Review</NavLink>
 
             <NavLink to={"/myReviews"}>My Reviews</NavLink>
 
