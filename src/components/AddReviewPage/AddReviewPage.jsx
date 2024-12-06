@@ -18,7 +18,7 @@ const AddReviewPage = () => {
     const rating = e.target.rating.value;
     const gameThumbnail = e.target.gameThumbnail.value;
 
-    const review = {
+    const newReview = {
       name,
       gameName,
       genreSelect,
@@ -29,7 +29,19 @@ const AddReviewPage = () => {
       gameThumbnail,
     };
 
-    console.log(review);
+    // SEND REVIEW IN MONGODB //
+
+    fetch("http://localhost:5000/reviews", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newReview),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
   };
 
   return (
