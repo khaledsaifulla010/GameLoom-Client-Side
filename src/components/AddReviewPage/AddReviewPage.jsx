@@ -2,14 +2,31 @@ import Lottie from "lottie-react";
 import reviewLottie from "../../../public/reviewLottie.json";
 
 const AddReviewPage = () => {
-  // const handleReview = (e) => {
-  //   e.preventDefault();
+  const handleAddReview = (e) => {
+    e.preventDefault();
 
-  //   const name = e.target.name.value;
-  //   const email = e.target.email.value;
-  //   const photo_URL = e.target.photo_URL.value;
-  //   const password = e.target.password.value;
-  // };
+    const name = e.target.name.value;
+    const gameName = e.target.gameName.value;
+    const genreSelect = e.target.genreSelect.value;
+    const pulicationYear = e.target.pulicationYear.value;
+    const email = e.target.email.value;
+    const reviewDescription = e.target.reviewDescription.value;
+    const rating = e.target.rating.value;
+    const gameThumbnail = e.target.gameThumbnail.value;
+
+    const review = {
+      name,
+      gameName,
+      genreSelect,
+      pulicationYear,
+      email,
+      reviewDescription,
+      rating,
+      gameThumbnail,
+    };
+
+    console.log(review);
+  };
 
   return (
     <div className="mt-12 mb-72 font-5">
@@ -17,7 +34,10 @@ const AddReviewPage = () => {
         Please Review a Game
       </h1>
       <div>
-        <form className="flex items-center justify-center mt-12">
+        <form
+          onSubmit={handleAddReview}
+          className="flex items-center justify-center mt-12"
+        >
           <div>
             <Lottie className="w-[450px]" animationData={reviewLottie}></Lottie>
           </div>
@@ -60,7 +80,7 @@ const AddReviewPage = () => {
                   </label>
                   <select
                     className="select select-bordered w-full shadow-md transition duration-300 ease-in-out hover:shadow-lg"
-                    name="select"
+                    name="genreSelect"
                   >
                     <option selected>Enter Games Genre</option>
                     <option>Action</option>
@@ -77,11 +97,11 @@ const AddReviewPage = () => {
                   </label>
                   <input
                     type="number"
-                    name="year"
+                    name="pulicationYear"
                     className="input input-bordered shadow-md transition duration-300 ease-in-out hover:shadow-lg"
                     min="1980"
                     max={new Date().getFullYear()}
-                    placeholder="Enter Year"
+                    placeholder="Enter Publication Year"
                     required
                   />
                 </div>
