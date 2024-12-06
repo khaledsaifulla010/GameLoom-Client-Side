@@ -1,35 +1,15 @@
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
+import { useLoaderData } from "react-router-dom";
 
 const GameWatchList = () => {
-  const { user, loading } = useContext(AuthContext);
-
-  const [watchList, setWatchList] = useState([]);
-
-  useEffect(() => {
-    if (user?.email) {
-      fetch(`http://localhost:5000/myWatchlist?email=${user.email}`)
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          setWatchList(data);
-        })
-        .catch((error) => console.error("Error fetching watchlist:", error));
-    }
-  }, [user]);
-
-  if (loading) {
-    return (
-      <span className="loading loading-infinity loading-lg text-secondary ml-[650px]"></span>
-    );
-  }
+  const allWatchListData = useLoaderData();
+  console.log(allWatchListData);
 
   return (
-    <div>
-      <h1 className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-600 to-gray-600">
-        My Game Watchlist
+    <div className="font-1">
+      <h1 className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-500 to-gray-700">
+        My Game Watch List
       </h1>
-      {watchList.length > 0 ? (
+      {allWatchListData && allWatchListData.length > 0 ? (
         <div className="overflow-x-auto mt-12 mb-72 px-8">
           <div>
             <div className="rounded-lg shadow-lg border border-gray-300">
@@ -45,7 +25,7 @@ const GameWatchList = () => {
                   </tr>
                 </thead>
                 <tbody className="text-gray-700">
-                  {watchList.map((game, index) => (
+                  {allWatchListData.map((game, index) => (
                     <tr key={index} className="hover:bg-gray-100">
                       <td className="text-center py-3 px-4 font-bold text-green-600 text-base flex justify-center items-center mt-8">
                         <span className="border p-4 rounded-full bg-green-50 border-green-100 w-10 h-10 flex items-center justify-center">
@@ -56,7 +36,10 @@ const GameWatchList = () => {
                       <td className="text-center py-3 px-4">
                         <div className="avatar flex justify-center">
                           <div className="mask rounded-lg h-24 w-24">
-                            <img src={game.gameThumbnail} />
+                            <img
+                              src={game.gameThumbnail}
+                              alt="Game Thumbnail"
+                            />
                           </div>
                         </div>
                       </td>
@@ -92,7 +75,7 @@ const GameWatchList = () => {
           </div>
         </div>
       ) : (
-        <h1 className="text-center text-gray-500 font-black text-4xl mt-12 mb-24">
+        <h1 className="text-center text-gray-500 font-black text-4xl mt-24 mb-24">
           Watchlist is Empty!
         </h1>
       )}
