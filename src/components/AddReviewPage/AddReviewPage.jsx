@@ -2,9 +2,12 @@ import Lottie from "lottie-react";
 import reviewLottie from "../../../public/reviewLottie.json";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const AddReviewPage = () => {
   const { user } = useContext(AuthContext);
+  const redirects = useNavigate();
 
   const handleAddReview = (e) => {
     e.preventDefault();
@@ -41,6 +44,8 @@ const AddReviewPage = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        toast.success("Thanks for Giving Review.", { position: "top-center" });
+        redirects("/");
       });
   };
 
