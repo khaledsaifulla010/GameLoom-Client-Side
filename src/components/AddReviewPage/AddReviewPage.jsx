@@ -107,6 +107,7 @@ const AddReviewPage = () => {
                     <option selected>Enter Games Genre</option>
                     <option>Action</option>
                     <option>RPG</option>
+                    <option>Sandbox</option>
                     <option>Adventure</option>
                   </select>
                 </div>
