@@ -6,6 +6,7 @@ import Login from "../components/Authentication/Login/Login";
 import Register from "../components/Authentication/Register/Register";
 import AddReviewPage from "../components/AddReviewPage/AddReviewPage";
 import PrivateRoute from "../privateRoute/PrivateRoute";
+import AllReviews from "../components/AllReviews/AllReviews";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
             <AddReviewPage></AddReviewPage>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/reviews",
+        element: <AllReviews></AllReviews>,
       },
     ],
   },
