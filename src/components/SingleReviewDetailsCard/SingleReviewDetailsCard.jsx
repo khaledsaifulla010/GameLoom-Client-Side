@@ -23,7 +23,7 @@ const SingleReviewDetailsCard = () => {
   };
 
   const handleAddToWatchList = () => {
-    fetch("http://localhost:5000/myWatchlist", {
+    fetch(`http://localhost:5000/myWatchlist?email=${email}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
