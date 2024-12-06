@@ -50,7 +50,7 @@ const AddReviewPage = () => {
   };
 
   return (
-    <div className="mt-12 mb-72 font-5">
+    <div className="mt-12 mb-24 font-5">
       <h1 className="mt-4 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-pink-600">
         Please Review a Game
       </h1>
