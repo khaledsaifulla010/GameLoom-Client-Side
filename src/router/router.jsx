@@ -8,6 +8,7 @@ import AddReviewPage from "../components/AddReviewPage/AddReviewPage";
 import PrivateRoute from "../privateRoute/PrivateRoute";
 import AllReviews from "../components/AllReviews/AllReviews";
 import SingleReviewCard from "../components/SingleReviewCard/SingleReviewCard";
+import GameWatchList from "../components/GameWatchList/GameWatchList";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
         element: <SingleReviewCard></SingleReviewCard>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/reviews/${params.id}`),
+      },
+      {
+        path: "/myWatchlist",
+        element: <GameWatchList></GameWatchList>,
       },
     ],
   },
