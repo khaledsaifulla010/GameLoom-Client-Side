@@ -1,12 +1,20 @@
+import Lottie from "lottie-react";
+import reviewLottie from "../../../public/reviewLottie.json";
+
 const AddReviewPage = () => {
   return (
     <div className="mt-12 mb-72 font-5">
-      <h1>Reviews</h1>
+      <h1 className="mt-4 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-pink-600">
+        Please Review a Game
+      </h1>
       <div>
-        <form>
+        <form className="flex items-center justify-center mt-12 ">
           <div>
+            <Lottie className="w-[450px]" animationData={reviewLottie}></Lottie>
+          </div>
+          <div className="flex items-center justify-center gap-8 border w-[1000px] p-4 rounded-xl h-[500px]">
             {/* First 4 Properties */}
-            <div>
+            <div className="w-[450px] space-y-4">
               {/* Name */}
               <div className="form-control">
                 <label className="label">
@@ -50,15 +58,18 @@ const AddReviewPage = () => {
                   <span className="label-text">Publication Year</span>
                 </label>
                 <input
-                  type="date"
-                  name="date"
+                  type="number"
+                  name="year"
                   className="input input-bordered"
+                  min="1980"
+                  max={new Date().getFullYear()}
+                  placeholder="Enter Year"
                   required
                 />
               </div>
             </div>
             {/* Second 4 Properties */}
-            <div>
+            <div className="w-[450px] space-y-4">
               {/* Email */}
               <div className="form-control">
                 <label className="label">
