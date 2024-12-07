@@ -15,11 +15,7 @@ const AllReviews = () => {
   const [sortedReviews, setSortedReviews] = useState(reviews);
 
   if (loading) {
-    return <span className="loading loading-infinity loading-xs"></span>;
-  }
-
-  if (!user) {
-    return <p className="text-center text-red-500">User not logged in.</p>;
+    return null; // Don't show anything while loading
   }
 
   // HANDLE SORTING USING RATING & YEAR
@@ -52,10 +48,16 @@ const AllReviews = () => {
   return (
     <div className="mt-12 mb-24 font-4">
       <div className="flex items-center justify-around gap-36 mt-16 mb-28">
-        <div className="border w-[400px] p-2 text-center text-lg font-semibold text-purple-700 border-purple-200 bg-purple-50 rounded-xl">
-          <h1>Name : {user.displayName} </h1>
-          <h1>Email : {user.email} </h1>
-        </div>
+        {user ? (
+          <div className="border w-[400px] p-2 text-center text-lg font-semibold text-purple-700 border-purple-200 bg-purple-50 rounded-xl">
+            <h1>Name : {user.displayName} </h1>
+            <h1>Email : {user.email} </h1>
+          </div>
+        ) : (
+          <p className="text-center text-red-500 font-bold">
+            You are a Guest. Please Login or Register!
+          </p>
+        )}
         <div>
           <h1 className=" text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-teal-600">
             All Reviews
