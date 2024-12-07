@@ -1,10 +1,14 @@
 import { useLoaderData } from "react-router-dom";
-
+import "animate.css/animate.css";
 const GameWatchList = () => {
   const allWatchListData = useLoaderData();
   return (
     <div className="font-1">
-      <h1 className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-700">
+      <h1
+        style={{ animationDuration: "4s" }}
+        className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-700 animate__animated
+         animate__backInLeft"
+      >
         My Game Watch List
       </h1>
       {allWatchListData && allWatchListData.length > 0 ? (
