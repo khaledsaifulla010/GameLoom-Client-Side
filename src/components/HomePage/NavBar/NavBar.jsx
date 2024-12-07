@@ -1,5 +1,5 @@
 import logo from "../../../assets/images/logo/websiteLogo.jpg";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import "./NavBar.css";
 import { useContext } from "react";
@@ -10,11 +10,13 @@ import { toast } from "react-toastify";
 
 const NavBar = () => {
   const { user, logoutUser, userEmail } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     logoutUser().then(() => {
       toast.success("Successfully Logged Out !", { position: "top-center" });
     });
+    navigate("/");
   };
 
   return (
@@ -63,7 +65,7 @@ const NavBar = () => {
             )}
             <ul
               tabIndex={0}
-              className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow border-2"
+              className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow border-2 gap-y-2"
             >
               <Link
                 to={"/login"}
@@ -71,12 +73,14 @@ const NavBar = () => {
               >
                 Login
               </Link>
-              <Link
-                className="font-bold text-base text-center mt-1"
-                to={"/myProfile"}
-              >
-                My Profile
-              </Link>
+              {user && (
+                <Link
+                  className="border p-1 w-full rounded-xl text-blue-500 bg-blue-200 border-blue-300 font-bold text-lg shadow-md transition duration-500 ease-in-out transform hover:scale-105 active:scale-95 text-center"
+                  to={"/myProfile"}
+                >
+                  My Profile
+                </Link>
+              )}
               {user && (
                 <button
                   onClick={handleLogout}

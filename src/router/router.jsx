@@ -11,6 +11,7 @@ import SingleReviewDetailsCard from "../components/SingleReviewDetailsCard/Singl
 import GameWatchList from "../components/GameWatchList/GameWatchList";
 import MyReviews from "../components/MyReviews/MyReviews";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import MyProfile from "../components/MyProfile/MyProfile";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -53,7 +54,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/reviews/:id",
-        element: <SingleReviewDetailsCard></SingleReviewDetailsCard>,
+        element: (
+          <PrivateRoute>
+            <SingleReviewDetailsCard></SingleReviewDetailsCard>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/reviews/${params.id}`),
       },
@@ -78,6 +83,14 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/reviews?userEmail=${params.userEmail}`),
+      },
+      {
+        path: "/myProfile",
+        element: (
+          <PrivateRoute>
+            <MyProfile></MyProfile>
+          </PrivateRoute>
+        ),
       },
     ],
   },
