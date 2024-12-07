@@ -9,13 +9,15 @@ const AddReviewPage = () => {
   const { user } = useContext(AuthContext);
   const redirects = useNavigate();
 
+  const { email: userEmail, displayName } = user;
+
   const handleAddReview = (e) => {
     e.preventDefault();
 
     const name = e.target.name.value;
     const gameName = e.target.gameName.value;
     const genreSelect = e.target.genreSelect.value;
-    const publicationYear = e.target.pulicationYear.value;
+    const publicationYear = e.target.publicationYear.value;
     const email = e.target.email.value;
     const reviewDescription = e.target.reviewDescription.value;
     const rating = e.target.rating.value;
@@ -31,6 +33,7 @@ const AddReviewPage = () => {
       rating,
       gameThumbnail,
     };
+    const singleReview = { ...newReview, userEmail, displayName };
 
     // SEND REVIEW IN MONGODB //
 
@@ -39,7 +42,7 @@ const AddReviewPage = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newReview),
+      body: JSON.stringify(singleReview),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -109,6 +112,7 @@ const AddReviewPage = () => {
                     <option>RPG</option>
                     <option>Sandbox</option>
                     <option>Adventure</option>
+                    <option>Strategy</option>
                   </select>
                 </div>
                 {/* Publication Year */}
