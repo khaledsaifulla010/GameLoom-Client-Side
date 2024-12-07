@@ -10,10 +10,12 @@ import AllReviews from "../components/AllReviews/AllReviews";
 import SingleReviewDetailsCard from "../components/SingleReviewDetailsCard/SingleReviewDetailsCard";
 import GameWatchList from "../components/GameWatchList/GameWatchList";
 import MyReviews from "../components/MyReviews/MyReviews";
+import ErrorPage from "../ErrorPage/ErrorPage";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
