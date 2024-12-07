@@ -8,8 +8,8 @@
 
 ### Five Features of this Project :
 
-**1. Showing All Review Dynamically.**
-**2. Adding Game Review Dynamically.**
-**3. Showing User Indibidual Review Dynamically.**
-**4. Update Review Dynamically.**
+**1. Showing All Review Dynamically.** <br>
+**2. Adding Game Review Dynamically.** <br>
+**3. Showing User Indibidual Review Dynamically.** <br>
+**4. Update Review Dynamically.** <br>
 **5. Delete Review Dynamically.**
