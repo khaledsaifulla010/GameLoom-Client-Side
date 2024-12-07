@@ -1,13 +1,20 @@
 import { Link } from "react-router-dom";
 
 const AllReviewsCard = ({ review }) => {
-  const { _id, name, gameName, gameThumbnail, genreSelect } = review;
+  const {
+    _id,
+    name,
+    gameName,
+    gameThumbnail,
+    genreSelect,
+    publicationYear,
+    rating,
+  } = review;
 
   return (
     <div>
-      
       <div className="flex ">
-        <div className="card bg-slate-100 border-2 border-slate-300 w-[700px] h-[300px] overflow-hidden shadow-md transition-transform duration-1000 ease-in-out transform hover:shadow-[0px_15px_35px_rgba(0,0,0,0.5)] hover:scale-105">
+        <div className="card bg-slate-100 border-2 border-slate-300 w-[700px] h-[400px] overflow-hidden shadow-md transition-transform duration-1000 ease-in-out transform hover:shadow-[0px_15px_35px_rgba(0,0,0,0.5)] hover:scale-105">
           <figure className="flex h-full">
             <img
               src={gameThumbnail}
@@ -28,6 +35,18 @@ const AllReviewsCard = ({ review }) => {
                 <div className="mt-2 text-base text-gray-600 ">
                   <p className="font-semibold text-rose-700 border px-2 w-full rounded-xl bg-rose-50 border-rose-200 text-center italic">
                     <strong>Genre :</strong> {genreSelect}
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center justify-between mt-8">
+                <div className="mt-4 text-base text-gray-600 ">
+                  <p className="font-semibold text-violet-700 border px-2 w-full rounded-xl bg-violet-50 border-violet-200 text-center">
+                    <strong>Published in :</strong> {publicationYear}
+                  </p>
+                </div>
+                <div className="mt-4 text-base text-gray-600 ">
+                  <p className="font-semibold text-orange-600 border px-2 w-full rounded-xl bg-orange-50 border-orange-200 text-center italic">
+                    <strong>Rating :</strong> {rating}
                   </p>
                 </div>
               </div>
