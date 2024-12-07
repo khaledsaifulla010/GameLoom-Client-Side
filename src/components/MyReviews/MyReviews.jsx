@@ -6,6 +6,7 @@ import { RiDeleteBin2Fill } from "react-icons/ri";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
+import "animate.css/animate.css";
 const MyReviews = () => {
   const { userEmail, user } = useContext(AuthContext);
 
@@ -102,7 +103,11 @@ const MyReviews = () => {
 
   return (
     <div className="mb-24 font-1">
-      <h1 className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-700">
+      <h1
+        style={{ animationDuration: "4s" }}
+        className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-700 animate__animated
+         animate__backInLeft "
+      >
         My Game Review List
       </h1>
       {filteredReviews && filteredReviews.length > 0 ? (

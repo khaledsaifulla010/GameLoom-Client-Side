@@ -60,8 +60,8 @@ const AllReviews = () => {
         )}
         <div>
           <h1
-            style={{ animationDuration: "2s" }}
-            className=" text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-teal-600 animate__animated animate__zoomInDown "
+            style={{ animationDuration: "4s" }}
+            className=" text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-teal-600 animate__animated animate__backInDown "
           >
             All Reviews
           </h1>
