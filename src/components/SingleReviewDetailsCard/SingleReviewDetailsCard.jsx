@@ -4,6 +4,7 @@ import { BiSolidLike } from "react-icons/bi";
 import { toast } from "react-toastify";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
+import "animate.css/animate.css";
 const SingleReviewDetailsCard = () => {
   const { user } = useContext(AuthContext);
   const { email: userEmail, displayName } = user;
@@ -46,7 +47,11 @@ const SingleReviewDetailsCard = () => {
 
   return (
     <div className="font-5">
-      <h1 className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-rose-600">
+      <h1
+        style={{ animationDuration: "4s" }}
+        className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-rose-600 animate__animated
+         animate__backInLeft"
+      >
         Review Details of "{gameName}"
       </h1>
       <div className="flex justify-center items-center p-8 mt-12 mb-24">

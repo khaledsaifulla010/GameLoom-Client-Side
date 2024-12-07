@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-
+import "animate.css/animate.css";
 const AddReviewPage = () => {
   const { user } = useContext(AuthContext);
   const redirects = useNavigate();
@@ -54,7 +54,11 @@ const AddReviewPage = () => {
 
   return (
     <div className="mt-12 mb-24 font-5">
-      <h1 className="mt-4 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-pink-600">
+      <h1
+        style={{ animationDuration: "4s" }}
+        className="mt-4 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-pink-600 animate__animated
+         animate__backInLeft "
+      >
         Please Review a Game
       </h1>
       <div>
@@ -86,9 +90,7 @@ const AddReviewPage = () => {
                 {/* Game Name */}
                 <div className="form-control">
                   <label className="label">
-                    <span className=" text-lg font-bold">
-                      Game Name
-                    </span>
+                    <span className=" text-lg font-bold">Game Name</span>
                   </label>
                   <input
                     type="text"
@@ -118,9 +120,7 @@ const AddReviewPage = () => {
                 {/* Publication Year */}
                 <div className="form-control">
                   <label className="label">
-                    <span className=" text-lg font-bold">
-                      Publication Year
-                    </span>
+                    <span className=" text-lg font-bold">Publication Year</span>
                   </label>
                   <input
                     type="number"
@@ -183,9 +183,7 @@ const AddReviewPage = () => {
                 {/* Thumbnail */}
                 <div className="form-control">
                   <label className="label">
-                    <span className="text-lg font-bold">
-                      Game Thumbnail
-                    </span>
+                    <span className="text-lg font-bold">Game Thumbnail</span>
                   </label>
                   <input
                     type="url"
