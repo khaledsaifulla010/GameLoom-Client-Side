@@ -7,6 +7,7 @@ import { AuthContext } from "../../../Providers/AuthProvider/AuthProvider";
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
 import { toast } from "react-toastify";
+import DarkWhiteMode from '../../DarkWhiteMode/DarkWhiteMode'
 
 const NavBar = () => {
   const { user, logoutUser, userEmail } = useContext(AuthContext);
@@ -30,7 +31,7 @@ const NavBar = () => {
           />
         </Link>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 flex items-center gap-8 font-bold text-base">
+          <ul className="menu menu-horizontal px-1 flex items-center gap-8 font-bold text-base text-red-600">
             <NavLink to={"/"}>Home</NavLink>
             <NavLink to={"/reviews"}>All Reviews</NavLink>
             <NavLink to={"/addReview"}>Add Review</NavLink>
@@ -38,6 +39,7 @@ const NavBar = () => {
             <NavLink to={`/myReviews/${userEmail}`}>My Reviews</NavLink>
 
             <NavLink to={`/myWatchlist/${userEmail}`}>Game WatchList</NavLink>
+            <DarkWhiteMode></DarkWhiteMode>
           </ul>
         </div>
         <div className="navbar-end">

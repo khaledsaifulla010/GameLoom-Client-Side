@@ -68,11 +68,11 @@ const AddReviewPage = () => {
           <div className="border border-slate-300 w-[1000px] p-4 rounded-xl h-[520px] shadow-lg transition duration-500 ease-in-out hover:shadow-2xl">
             <div className="flex items-center justify-center gap-8">
               {/* First 4 Properties */}
-              <div className="w-[450px] space-y-2">
+              <div className="w-[450px] space-y-2 ">
                 {/* Name */}
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text text-lg font-bold">Name</span>
+                    <span className=" text-lg font-bold ">Name</span>
                   </label>
                   <input
                     type="text"
@@ -86,7 +86,7 @@ const AddReviewPage = () => {
                 {/* Game Name */}
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text text-lg font-bold">
+                    <span className=" text-lg font-bold">
                       Game Name
                     </span>
                   </label>
@@ -101,10 +101,10 @@ const AddReviewPage = () => {
                 {/* Genres */}
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text text-lg font-bold">Genres</span>
+                    <span className=" text-lg font-bold">Genres</span>
                   </label>
                   <select
-                    className="select select-bordered w-full shadow-md transition duration-300 ease-in-out hover:shadow-lg"
+                    className="select select-bordered w-full shadow-md transition duration-300 ease-in-out hover:shadow-lg text-gray-500"
                     name="genreSelect"
                   >
                     <option selected>Enter Games Genre</option>
@@ -118,7 +118,7 @@ const AddReviewPage = () => {
                 {/* Publication Year */}
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text text-lg font-bold">
+                    <span className=" text-lg font-bold">
                       Publication Year
                     </span>
                   </label>
@@ -138,7 +138,7 @@ const AddReviewPage = () => {
                 {/* Email */}
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text text-lg font-bold">Email</span>
+                    <span className=" text-lg font-bold">Email</span>
                   </label>
                   <input
                     type="email"
@@ -152,7 +152,7 @@ const AddReviewPage = () => {
                 {/* Review Description */}
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text text-lg font-bold">
+                    <span className=" text-lg font-bold">
                       Review Description
                     </span>
                   </label>
@@ -167,7 +167,7 @@ const AddReviewPage = () => {
                 {/* Rating */}
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text text-lg font-bold">Rating</span>
+                    <span className=" text-lg font-bold">Rating</span>
                   </label>
                   <input
                     type="number"
@@ -183,7 +183,7 @@ const AddReviewPage = () => {
                 {/* Thumbnail */}
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text text-lg font-bold">
+                    <span className="text-lg font-bold">
                       Game Thumbnail
                     </span>
                   </label>

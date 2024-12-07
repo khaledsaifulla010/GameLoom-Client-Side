@@ -2,11 +2,9 @@ import { useLoaderData } from "react-router-dom";
 
 const GameWatchList = () => {
   const allWatchListData = useLoaderData();
-  console.log(allWatchListData);
-
   return (
     <div className="font-1">
-      <h1 className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-500 to-gray-700">
+      <h1 className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-700">
         My Game Watch List
       </h1>
       {allWatchListData && allWatchListData.length > 0 ? (
