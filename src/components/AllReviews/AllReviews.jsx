@@ -10,8 +10,9 @@ const AllReviews = () => {
   const reviews = useLoaderData();
   const { user, loading } = useContext(AuthContext);
 
-  const [sortOption, setSortOption] = useState(null); // Set initial state to null (no sorting)
-  const [sortedReviews, setSortedReviews] = useState(reviews); // State to hold sorted reviews
+  const [sortOption, setSortOption] = useState(null);
+  const [filterOption, setFilterOption] = useState([]);
+  const [sortedReviews, setSortedReviews] = useState(reviews);
 
   if (loading) {
     return <span className="loading loading-infinity loading-xs"></span>;
@@ -21,8 +22,7 @@ const AllReviews = () => {
     return <p className="text-center text-red-500">User not logged in.</p>;
   }
 
-  // HANDLE SORTING USNIG RATING & YEAR
-
+  // HANDLE SORTING USING RATING & YEAR
   const handleSort = (option) => {
     setSortOption(option);
 
@@ -34,8 +34,20 @@ const AllReviews = () => {
       sorted = sorted.sort((a, b) => b.publication_year - a.publication_year);
     }
 
+    if (filterOption.length > 0) {
+      sorted = sorted.filter((game) => filterOption.includes(game.genreSelect));
+    }
+
     setSortedReviews(sorted);
   };
+
+  // HANDLE GENRE FILTER
+  const handleGenreClick = (genre) => {
+    const filtered = reviews.filter((game) => game.genreSelect === genre);
+    setFilterOption(filtered);
+  };
+
+  const finalReviews = filterOption.length > 0 ? filterOption : sortedReviews;
 
   return (
     <div className="mt-12 mb-24 font-4">
@@ -50,7 +62,7 @@ const AllReviews = () => {
           </h1>
         </div>
         <div>
-          <div>
+          <div className="flex">
             <div className="dropdown dropdown-bottom dropdown-end">
               <div
                 tabIndex={0}
@@ -81,21 +93,57 @@ const AllReviews = () => {
                 </li>
               </ul>
             </div>
-            <div className="dropdown dropdown-bottom dropdown-end ml-6">
+            <div className="dropdown dropdown-bottom dropdown-end ml-6 flex justify-center items-center">
               <div
                 tabIndex={0}
                 role="button"
                 className="flex items-center gap-1 font-bold text-xl text-cyan-600 border p-2 rounded-xl bg-cyan-50 border-cyan-100"
               >
-                Fliter By <FaFilter className="mt-1" />
+                Filter By <FaFilter className="mt-1" />
               </div>
               <ul
                 tabIndex={0}
-                className="dropdown-content menu bg-base-100 rounded-box z-[1] w-28 p-2 shadow gap-y-4 border-2"
+                className="dropdown-content menu bg-base-100 rounded-box z-[1] w-32 p-2 shadow gap-y-4 border-2 mx-auto text-center"
               >
-                <li className="font-semibold text-yellow-600 border rounded-xl bg-yellow-50 border-yellow-100 w-24">
+                <li
+                  onClick={() => handleGenreClick("Action")}
+                  className="font-semibold text-white border rounded-xl bg-red-500 hover:bg-red-600 w-24 mx-auto mb-2"
+                >
                   <h1>
-                    Genre <FaLightbulb />
+                    Action <FaLightbulb />
+                  </h1>
+                </li>
+                <li
+                  onClick={() => handleGenreClick("RPG")}
+                  className="font-semibold text-white border rounded-xl bg-blue-500 hover:bg-blue-600 w-24 mx-auto mb-2"
+                >
+                  <h1>
+                    RPG <FaLightbulb />
+                  </h1>
+                </li>
+                <li
+                  onClick={() => handleGenreClick("Sandbox")}
+                  className="font-semibold text-white border rounded-xl bg-green-500 hover:bg-green-600
+                   w-28 mx-auto mb-2"
+                >
+                  <h1>
+                    Sandbox <FaLightbulb />
+                  </h1>
+                </li>
+                <li
+                  onClick={() => handleGenreClick("Strategy")}
+                  className="font-semibold text-white border rounded-xl bg-yellow-500 hover:bg-yellow-600 w-24 mx-auto mb-2"
+                >
+                  <h1>
+                    Strategy <FaLightbulb />
+                  </h1>
+                </li>
+                <li
+                  onClick={() => handleGenreClick("Adventure")}
+                  className="font-semibold text-white border rounded-xl bg-purple-500 hover:bg-purple-600 w-28 mx-auto"
+                >
+                  <h1>
+                    Adventure <FaLightbulb />
                   </h1>
                 </li>
               </ul>
@@ -105,8 +153,8 @@ const AllReviews = () => {
       </div>
 
       <div className="grid grid-cols-2 ml-10 gap-x-4 mt-16 gap-y-16">
-        {sortedReviews.map((review) => (
-          <AllReviewsCard key={review._id} review={review}></AllReviewsCard>
+        {finalReviews.map((review) => (
+          <AllReviewsCard key={review._id} review={review} />
         ))}
       </div>
     </div>
