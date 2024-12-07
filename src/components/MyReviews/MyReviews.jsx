@@ -80,9 +80,28 @@ const MyReviews = () => {
                         </span>
                       </td>
                       <td className="text-center py-3 px-4 font-bold text-blue-600 text-2xl">
-                        <button className="ml-4">
+                        <button
+                          className="ml-4"
+                          onClick={() =>
+                            document.getElementById("my_modal_4").showModal()
+                          }
+                        >
                           <FaEdit />
                         </button>
+                        <dialog id="my_modal_4" className="modal">
+                          <div className="modal-box w-11/12 max-w-5xl">
+                            <h3 className="font-bold text-lg">Hello!</h3>
+                            <p className="py-4">
+                              Click the button below to close
+                            </p>
+                            <div className="modal-action">
+                              <form method="dialog">
+                                {/* if there is a button, it will close the modal */}
+                                <button className="btn">Close</button>
+                              </form>
+                            </div>
+                          </div>
+                        </dialog>
                       </td>
                       <td className="text-center py-3 px-4 font-bold text-red-600 text-2xl">
                         <button className="ml-4">
