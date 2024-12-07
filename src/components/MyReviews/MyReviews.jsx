@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
-
+import { FaEdit } from "react-icons/fa";
 const MyReviews = () => {
   const { userEmail } = useContext(AuthContext);
 
@@ -31,6 +31,8 @@ const MyReviews = () => {
                     <th className="text-center py-3 px-4">Genre</th>
                     <th className="text-center py-3 px-4">Rating</th>
                     <th className="text-center py-3 px-4">Published Year</th>
+                    <th className="text-center py-3 px-4">Update</th>
+                    <th className="text-center py-3 px-4">Delete</th>
                   </tr>
                 </thead>
                 <tbody className="text-gray-700">
@@ -53,8 +55,8 @@ const MyReviews = () => {
                         </div>
                       </td>
 
-                      <td className="text-center py-3 px-4 text-blue-500 font-bold text-base">
-                        <span className="border p-2 rounded-lg bg-blue-50 border-blue-100">
+                      <td className="text-center py-3 px-4 text-indigo-500 font-bold text-base">
+                        <span className="border p-2 rounded-lg bg-indigo-50 border-indigo-100">
                           {game.gameName}
                         </span>
                       </td>
@@ -65,16 +67,21 @@ const MyReviews = () => {
                         </span>
                       </td>
 
-                      <td className="text-center py-3 px-4 text-base font-bold text-orange-600">
-                        <span className="border p-2 rounded-lg bg-orange-50 border-orange-100">
+                      <td className="text-center py-3 px-4 text-base font-bold text-pink-500">
+                        <span className="border p-2 rounded-lg bg-pink-50 border-pink-100">
                           {game.rating}
                         </span>
                       </td>
 
-                      <td className="text-center py-3 px-4 text-base font-bold text-red-600">
-                        <span className="border p-2 rounded-lg bg-red-50 border-red-100">
+                      <td className="text-center py-3 px-4 text-base font-bold text-teal-600">
+                        <span className="border p-2 rounded-lg bg-teal-50 border-teal-100">
                           {game.publicationYear}
                         </span>
+                      </td>
+                      <td className="text-center py-3 px-4 font-bold text-blue-600 text-2xl">
+                        <button className="ml-4">
+                          <FaEdit />
+                        </button>
                       </td>
                     </tr>
                   ))}
