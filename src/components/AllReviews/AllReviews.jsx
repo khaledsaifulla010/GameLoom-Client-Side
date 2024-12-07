@@ -5,7 +5,7 @@ import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import { ImSortAmountDesc } from "react-icons/im";
 import { FaStar, FaFilter, FaLightbulb } from "react-icons/fa";
 import { PiCalendarStarFill } from "react-icons/pi";
-
+import "animate.css/animate.css";
 const AllReviews = () => {
   const reviews = useLoaderData();
   const { user, loading } = useContext(AuthContext);
@@ -59,7 +59,10 @@ const AllReviews = () => {
           </p>
         )}
         <div>
-          <h1 className=" text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-teal-600">
+          <h1
+            style={{ animationDuration: "2s" }}
+            className=" text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-teal-600 animate__animated animate__zoomInDown "
+          >
             All Reviews
           </h1>
         </div>

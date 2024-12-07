@@ -25,7 +25,7 @@ const SingleHighestRatedGameDetails = () => {
     <div className="font-5">
       <h1
         style={{ animationDuration: "6s" }}
-        className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-purple-600 animate__animated animate__backInLeft animate__infinite"
+        className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-purple-600 animate__animated animate__backInLeft "
       >
         Review Details of {gameName}
       </h1>
