@@ -64,10 +64,10 @@ const router = createBrowserRouter([
           ),
       },
       {
-        path: "/myReviews/:email",
+        path: "/myReviews/:userEmail",
         element: <MyReviews></MyReviews>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/reviews?email=${params.email}`),
+          fetch(`http://localhost:5000/reviews?userEmail=${params.userEmail}`),
       },
     ],
   },

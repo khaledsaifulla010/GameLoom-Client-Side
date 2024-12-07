@@ -1,0 +1,81 @@
+[
+  {
+    "_id": "675299bec4203f4e8550f760",
+    "name": "Khaled Saifulla",
+    "gameName": "The Legend of Zelda",
+    "genreSelect": "Adventure",
+    "email": "khaledsaifulla18@gmail.com",
+    "reviewDescription": "An open-world adventure game where players explore a vast world, solve puzzles, and battle enemies in a richly detailed environment.",
+    "rating": "4.9",
+    "gameThumbnail": "https://i.ibb.co.com/sbT06kV/image3.jpg",
+    "publicationYear": "2017"
+  },
+  {
+    "_id": "6752ea025deeb46339e0fd27",
+    "name": "Khaled Saifulla",
+    "gameName": "Red Dead Redemption 2",
+    "genreSelect": "Action",
+    "email": "khaledsaifulla18@gmail.com",
+    "reviewDescription": "An epic Western action-adventure game set in a vast open world, with gripping storytelling and immersive environments.",
+    "rating": "4.8",
+    "gameThumbnail": "https://i.ibb.co.com/L1pSPwc/image2.jpg",
+    "publicationYear": "2018"
+  },
+  {
+    "_id": "6752ea9b5deeb46339e0fd28",
+    "name": "Khaled Saifulla",
+    "gameName": "The Witcher 3: Wild Hunt",
+    "genreSelect": "RPG",
+    "email": "khaledsaifulla18@gmail.com",
+    "reviewDescription": "A critically acclaimed open-world RPG featuring a compelling story, memorable characters, and deep exploration.",
+    "rating": "4.7",
+    "gameThumbnail": "https://i.ibb.co.com/8cygw16/image1.jpg",
+    "publicationYear": "2015"
+  },
+  {
+    "_id": "6752eb875deeb46339e0fd29",
+    "name": "Khaled Saifulla",
+    "gameName": "Minecraft",
+    "genreSelect": "Sandbox",
+    "email": "khaledsaifulla18@gmail.com",
+    "reviewDescription": "A sandbox game that allows players to build, explore, and survive in a blocky, procedurally generated world.",
+    "rating": "3.2",
+    "gameThumbnail": "https://i.ibb.co.com/YPJnXRc/image5.jpg",
+    "publicationYear": "2011"
+  },
+  {
+    "_id": "6752ebd35deeb46339e0fd2a",
+    "name": "Khaled Saifulla",
+    "gameName": "God of War (2018)",
+    "genreSelect": "Action",
+    "email": "khaledsaifulla18@gmail.com",
+    "reviewDescription": "A reimagining of the God of War series, featuring a mature Kratos as he embarks on a journey through Norse mythology.",
+    "rating": "3.5",
+    "gameThumbnail": "https://i.ibb.co.com/2MBR01h/image4.jpg",
+    "publicationYear": "2018"
+  },
+  {
+    "_id": "6752ec395deeb46339e0fd2b",
+    "name": "Khaled Saifulla",
+    "gameName": "Cyberpunk 2077",
+    "genreSelect": "RPG",
+    "email": "khaledsaifulla18@gmail.com",
+    "reviewDescription": "A futuristic RPG set in a dystopian world, with deep story elements, extensive character customization, and immersive environments.",
+    "rating": "4.2",
+    "gameThumbnail": "https://i.ibb.co.com/5rhqg0k/image6.jpg",
+    "publicationYear": "2020"
+  },
+  {
+    "_id": "6753b9321bb0a8fdf113d593",
+    "name": "Khaled Saifulla",
+    "gameName": "Clash of Clans",
+    "genreSelect": "Strategy",
+    "publicationYear": "2012",
+    "email": "khaledsaifulla017@gmail.com",
+    "reviewDescription": "Clash of Clans is a highly engaging and strategic multiplayer game where players build villages, train armies, and battle with millions of players online. Its dynamic gameplay and consistent updates keep it fresh and competitive.",
+    "rating": "4.8",
+    "gameThumbnail": "https://i.ibb.co.com/tC2kq4P/image7.jpg",
+    "userEmail": "khaledsaifulla017@gmail.com",
+    "displayName": "Khaled Saifulla"
+  }
+]

@@ -3,7 +3,6 @@ import AllReviewsCard from "../AllReviewsCard/AllReviewsCard";
 
 const AllReviews = () => {
   const reviews = useLoaderData();
-  console.log(reviews);
 
   return (
     <div className="mt-12 mb-24  font-4">

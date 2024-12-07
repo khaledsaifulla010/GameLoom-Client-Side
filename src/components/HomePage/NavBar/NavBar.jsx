@@ -9,7 +9,7 @@ import { Tooltip } from "react-tooltip";
 import { toast } from "react-toastify";
 
 const NavBar = () => {
-  const { user, logoutUser, userEmail, email } = useContext(AuthContext);
+  const { user, logoutUser, userEmail} = useContext(AuthContext);
 
   const handleLogout = () => {
     logoutUser().then(() => {
@@ -33,7 +33,7 @@ const NavBar = () => {
             <NavLink to={"/reviews"}>All Reviews</NavLink>
             <NavLink to={"/addReview"}>Add Review</NavLink>
 
-            <NavLink to={`/myReviews/${email}`}>My Reviews</NavLink>
+            <NavLink to={`/myReviews/${userEmail}`}>My Reviews</NavLink>
 
             <NavLink to={`/myWatchlist/${userEmail}`}>Game WatchList</NavLink>
           </ul>
