@@ -5,6 +5,7 @@ import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 const MyReviews = () => {
   const { userEmail, user } = useContext(AuthContext);
 
@@ -15,6 +16,7 @@ const MyReviews = () => {
     (review) => review.userEmail === userEmail
   );
 
+  // UPDATE REVIEW
   const handleUpdateReview = (e, _id) => {
     e.preventDefault();
 
@@ -64,6 +66,38 @@ const MyReviews = () => {
           });
         }
       });
+  };
+
+  // DELETE REVIEW
+  const handleDelete = (_id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/reviews/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your review has been deleted.", "success");
+              setReviews((prevReviews) =>
+                prevReviews.filter((review) => review._id !== _id)
+              );
+            } else {
+              toast.error("Failed to delete the review.", {
+                position: "top-center",
+              });
+            }
+          });
+      }
+    });
   };
 
   return (
@@ -313,7 +347,10 @@ const MyReviews = () => {
                         </dialog>
                       </td>
                       <td className="text-center py-3 px-4 font-bold text-red-600 text-2xl">
-                        <button className="ml-4">
+                        <button
+                          onClick={() => handleDelete(game._id)}
+                          className="ml-4"
+                        >
                           <RiDeleteBin2Fill />
                         </button>
                       </td>
