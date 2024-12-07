@@ -3,7 +3,7 @@ import AllReviewsCard from "../AllReviewsCard/AllReviewsCard";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import { ImSortAmountDesc } from "react-icons/im";
-import { FaStar, FaFilter } from "react-icons/fa";
+import { FaStar, FaFilter, FaLightbulb } from "react-icons/fa";
 import { PiCalendarStarFill } from "react-icons/pi";
 
 const AllReviews = () => {
@@ -68,14 +68,9 @@ const AllReviews = () => {
                 tabIndex={0}
                 className="dropdown-content menu bg-base-100 rounded-box z-[1] w-28 p-2 shadow gap-y-4 border-2"
               >
-                <li className=" font-semibold text-rose-600 border rounded-xl bg-rose-50 border-rose-100 w-24">
+                <li className=" font-semibold text-yellow-600 border rounded-xl bg-yellow-50 border-yellow-100 w-24">
                   <h1>
-                    Rating <FaStar />
-                  </h1>
-                </li>
-                <li className=" font-semibold text-blue-600 border rounded-xl bg-blue-50 border-blue-100 w-24">
-                  <h1>
-                    Year <PiCalendarStarFill />
+                    Genre <FaLightbulb />
                   </h1>
                 </li>
               </ul>
