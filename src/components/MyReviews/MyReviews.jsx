@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
 import "animate.css/animate.css";
+import { Helmet } from "react-helmet-async";
 const MyReviews = () => {
   const { userEmail, user } = useContext(AuthContext);
 
@@ -103,6 +104,9 @@ const MyReviews = () => {
 
   return (
     <div className="mb-24 font-1">
+      <Helmet>
+        <title>GameLoom || MyReviews</title>
+      </Helmet>
       <h1
         style={{ animationDuration: "4s" }}
         className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-700 animate__animated

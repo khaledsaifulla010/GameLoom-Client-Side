@@ -6,6 +6,7 @@ import { ImSortAmountDesc } from "react-icons/im";
 import { FaStar, FaFilter, FaLightbulb } from "react-icons/fa";
 import { PiCalendarStarFill } from "react-icons/pi";
 import "animate.css/animate.css";
+import { Helmet } from "react-helmet-async";
 const AllReviews = () => {
   const reviews = useLoaderData();
   const { user, loading } = useContext(AuthContext);
@@ -47,6 +48,9 @@ const AllReviews = () => {
 
   return (
     <div className="mt-12 mb-24 font-4">
+      <Helmet>
+        <title>GameLoom || AllReviews</title>
+      </Helmet>
       <div className="flex items-center justify-around gap-36 mt-16 mb-28">
         {user ? (
           <div className="border w-[400px] p-2 text-center text-lg font-semibold text-purple-700 border-purple-200 bg-purple-50 rounded-xl">

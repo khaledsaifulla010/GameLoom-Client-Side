@@ -5,6 +5,7 @@ import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import "animate.css/animate.css";
+import { Helmet } from "react-helmet-async";
 const AddReviewPage = () => {
   const { user } = useContext(AuthContext);
   const redirects = useNavigate();
@@ -54,6 +55,9 @@ const AddReviewPage = () => {
 
   return (
     <div className="mt-12 mb-24 font-5">
+      <Helmet>
+        <title>GameLoom || AddReviews</title>
+      </Helmet>
       <h1
         style={{ animationDuration: "4s" }}
         className="mt-4 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-pink-600 animate__animated

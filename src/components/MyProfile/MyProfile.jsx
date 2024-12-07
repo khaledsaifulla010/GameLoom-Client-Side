@@ -1,8 +1,7 @@
 import { useContext } from "react";
 import { FaUserCircle } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
-
+import { Helmet } from "react-helmet-async";
 const MyProfile = () => {
   const { user, loading } = useContext(AuthContext);
   if (loading) {
@@ -13,6 +12,9 @@ const MyProfile = () => {
 
   return (
     <div className="mb-36 mt-12">
+      <Helmet>
+        <title>GameLoom || MyProfile</title>
+      </Helmet>
       <div className="card border max-w-[900px] mx-auto rounded-xl shadow-lg bg-white">
         <div className="flex items-center ml-12 mt-8 gap-4">
           {user && user?.photoURL ? (

@@ -1,9 +1,13 @@
 import { useLoaderData } from "react-router-dom";
 import "animate.css/animate.css";
+import { Helmet } from "react-helmet-async";
 const GameWatchList = () => {
   const allWatchListData = useLoaderData();
   return (
     <div className="font-1">
+      <Helmet>
+        <title>GameLoom || GameWatchList</title>
+      </Helmet>
       <h1
         style={{ animationDuration: "4s" }}
         className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-700 animate__animated
