@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import { FaEdit } from "react-icons/fa";
+import { RiDeleteBin2Fill } from "react-icons/ri";
 const MyReviews = () => {
   const { userEmail } = useContext(AuthContext);
 
@@ -81,6 +82,11 @@ const MyReviews = () => {
                       <td className="text-center py-3 px-4 font-bold text-blue-600 text-2xl">
                         <button className="ml-4">
                           <FaEdit />
+                        </button>
+                      </td>
+                      <td className="text-center py-3 px-4 font-bold text-red-600 text-2xl">
+                        <button className="ml-4">
+                          <RiDeleteBin2Fill />
                         </button>
                       </td>
                     </tr>
