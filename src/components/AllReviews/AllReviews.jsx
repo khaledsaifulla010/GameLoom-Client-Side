@@ -15,7 +15,7 @@ const AllReviews = () => {
   const [sortedReviews, setSortedReviews] = useState(reviews);
 
   if (loading) {
-    return null; // Don't show anything while loading
+    return null;
   }
 
   // HANDLE SORTING USING RATING & YEAR

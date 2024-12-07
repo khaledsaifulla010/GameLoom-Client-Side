@@ -9,7 +9,7 @@ import { Tooltip } from "react-tooltip";
 import { toast } from "react-toastify";
 
 const NavBar = () => {
-  const { user, logoutUser, userEmail} = useContext(AuthContext);
+  const { user, logoutUser, userEmail } = useContext(AuthContext);
 
   const handleLogout = () => {
     logoutUser().then(() => {
@@ -56,6 +56,11 @@ const NavBar = () => {
                 </h1>
               )}
             </div>
+            {user ? (
+              <div className="w-3 h-3 border-2 rounded-full bg-green-500 absolute ml-12 -mt-4"></div>
+            ) : (
+              ""
+            )}
             <ul
               tabIndex={0}
               className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow border-2"
