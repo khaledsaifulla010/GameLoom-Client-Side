@@ -31,29 +31,55 @@ const AllReviews = () => {
           </h1>
         </div>
         <div>
-          <div className="dropdown dropdown-bottom dropdown-end">
-            <div
-              tabIndex={0}
-              role="button"
-              className="flex items-center gap-1 font-bold text-xl text-orange-600 border p-2 rounded-xl bg-orange-50 border-orange-100"
-            >
-              Sort By <ImSortAmountDesc className="mt-1" />
+          <div>
+            <div className="dropdown dropdown-bottom dropdown-end">
+              <div
+                tabIndex={0}
+                role="button"
+                className="flex items-center gap-1 font-bold text-xl text-orange-600 border p-2 rounded-xl bg-orange-50 border-orange-100"
+              >
+                Sort By <ImSortAmountDesc className="mt-1" />
+              </div>
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu bg-base-100 rounded-box z-[1] w-28 p-2 shadow gap-y-4 border-2"
+              >
+                <li className=" font-semibold text-rose-600 border rounded-xl bg-rose-50 border-rose-100 w-24">
+                  <h1>
+                    Rating <FaStar />
+                  </h1>
+                </li>
+                <li className=" font-semibold text-blue-600 border rounded-xl bg-blue-50 border-blue-100 w-24">
+                  <h1>
+                    Year <PiCalendarStarFill />
+                  </h1>
+                </li>
+              </ul>
             </div>
-            <ul
-              tabIndex={0}
-              className="dropdown-content menu bg-base-100 rounded-box z-[1] w-28 p-2 shadow gap-y-4 border-2"
-            >
-              <li className=" font-semibold text-rose-600 border rounded-xl bg-rose-50 border-rose-100 w-24">
-                <h1>
-                  Rating <FaStar />
-                </h1>
-              </li>
-              <li className=" font-semibold text-blue-600 border rounded-xl bg-blue-50 border-blue-100 w-24">
-                <h1>
-                  Year <PiCalendarStarFill />
-                </h1>
-              </li>
-            </ul>
+            <div className="dropdown dropdown-bottom dropdown-end ml-6">
+              <div
+                tabIndex={0}
+                role="button"
+                className="flex items-center gap-1 font-bold text-xl text-cyan-600 border p-2 rounded-xl bg-cyan-50 border-cyan-100"
+              >
+                Fliter By <FaFilter className="mt-1" />
+              </div>
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu bg-base-100 rounded-box z-[1] w-28 p-2 shadow gap-y-4 border-2"
+              >
+                <li className=" font-semibold text-rose-600 border rounded-xl bg-rose-50 border-rose-100 w-24">
+                  <h1>
+                    Rating <FaStar />
+                  </h1>
+                </li>
+                <li className=" font-semibold text-blue-600 border rounded-xl bg-blue-50 border-blue-100 w-24">
+                  <h1>
+                    Year <PiCalendarStarFill />
+                  </h1>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
