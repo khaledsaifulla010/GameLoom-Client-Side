@@ -5,7 +5,8 @@ const AllReviewsCard = ({ review }) => {
 
   return (
     <div>
-      <div className="flex  ">
+      
+      <div className="flex ">
         <div className="card bg-slate-100 border-2 border-slate-300 w-[700px] h-[300px] overflow-hidden shadow-md transition-transform duration-1000 ease-in-out transform hover:shadow-[0px_15px_35px_rgba(0,0,0,0.5)] hover:scale-105">
           <figure className="flex h-full">
             <img
