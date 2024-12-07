@@ -57,26 +57,26 @@ const MyProfile = () => {
         <div className="divider px-4"></div>
         <div className=" ">
           <div className="flex items-center justify-between px-6 py-4">
-            <h1 className="font-bold text-xl">Name </h1>
+            <h1 className="font-bold text-xl text-black">Name </h1>
             <h1 className="font-bold text-xl text-slate-600">
               {user?.displayName}
             </h1>
           </div>
           <div className="divider px-4 -mt-2"></div>
           <div className="flex items-center justify-between px-6 py-4">
-            <h1 className="font-bold text-xl">Email </h1>
+            <h1 className="font-bold text-xl text-black">Email </h1>
             <h1 className="font-bold text-xl text-slate-600">{user?.email}</h1>
           </div>
           <div className="divider px-4 -mt-2"></div>
           <div className="flex items-center justify-between px-6 py-4">
-            <h1 className="font-bold text-xl">Phone Number</h1>
+            <h1 className="font-bold text-xl text-black">Phone Number</h1>
             <h1 className="font-bold text-xl text-slate-600">
               {user?.phoneNumber ?? "N/A"}
             </h1>
           </div>
           <div className="divider px-4 -mt-2"></div>
           <div className="flex items-center justify-between px-6 py-4">
-            <h1 className="font-bold text-xl">Account Created</h1>
+            <h1 className="font-bold text-xl text-black">Account Created</h1>
             <h1 className="font-bold text-xl text-slate-600">
               {user.metadata?.creationTime
                 ? new Date(user.metadata.creationTime).toLocaleDateString(

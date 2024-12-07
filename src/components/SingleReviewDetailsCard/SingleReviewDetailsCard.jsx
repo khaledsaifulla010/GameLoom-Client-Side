@@ -46,7 +46,7 @@ const SingleReviewDetailsCard = () => {
 
   return (
     <div className="font-5">
-      <h1 className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-600 to-gray-600">
+      <h1 className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-rose-600">
         Review Details of "{gameName}"
       </h1>
       <div className="flex justify-center items-center p-8 mt-12 mb-24">

@@ -1,6 +1,6 @@
 import { Heart, Rating } from "@smastrom/react-rating";
 import { useLoaderData } from "react-router-dom";
-
+import "animate.css/animate.css";
 const SingleHighestRatedGameDetails = () => {
   const singleGame = useLoaderData();
 
@@ -23,7 +23,10 @@ const SingleHighestRatedGameDetails = () => {
 
   return (
     <div className="font-5">
-      <h1 className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-600 to-gray-600">
+      <h1
+        style={{ animationDuration: "6s" }}
+        className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-purple-600 animate__animated animate__backInLeft animate__infinite"
+      >
         Review Details of {gameName}
       </h1>
       <div className="flex justify-center items-center p-8 mt-12 mb-24">
