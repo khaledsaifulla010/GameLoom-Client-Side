@@ -3,7 +3,8 @@ import AllReviewsCard from "../AllReviewsCard/AllReviewsCard";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import { ImSortAmountDesc } from "react-icons/im";
-import { FaStar } from "react-icons/fa";
+import { FaStar, FaFilter } from "react-icons/fa";
+import { PiCalendarStarFill } from "react-icons/pi";
 
 const AllReviews = () => {
   const reviews = useLoaderData();
@@ -19,7 +20,7 @@ const AllReviews = () => {
 
   return (
     <div className="mt-12 mb-24 font-4">
-      <div className="flex items-center justify-around mt-16 mb-24">
+      <div className="flex items-center justify-around mt-16 mb-28">
         <div className="border w-[400px] p-2 text-center text-lg font-semibold text-purple-700 border-purple-200 bg-purple-50 rounded-xl">
           <h1>Name : {user.displayName} </h1>
           <h1>Email : {user.email} </h1>
@@ -30,7 +31,7 @@ const AllReviews = () => {
           </h1>
         </div>
         <div>
-          <div className="dropdown dropdown-bottom">
+          <div className="dropdown dropdown-bottom dropdown-end">
             <div
               tabIndex={0}
               role="button"
@@ -40,11 +41,16 @@ const AllReviews = () => {
             </div>
             <ul
               tabIndex={0}
-              className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+              className="dropdown-content menu bg-base-100 rounded-box z-[1] w-28 p-2 shadow gap-y-4 border-2"
             >
-              <li className=" font-semibold text-rose-600 border rounded-xl bg-rose-50 border-rose-100">
-                <h1 className="ml-12">
+              <li className=" font-semibold text-rose-600 border rounded-xl bg-rose-50 border-rose-100 w-24">
+                <h1>
                   Rating <FaStar />
+                </h1>
+              </li>
+              <li className=" font-semibold text-blue-600 border rounded-xl bg-blue-50 border-blue-100 w-24">
+                <h1>
+                  Year <PiCalendarStarFill />
                 </h1>
               </li>
             </ul>
