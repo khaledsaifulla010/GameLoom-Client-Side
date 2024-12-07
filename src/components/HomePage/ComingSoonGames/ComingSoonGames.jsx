@@ -5,7 +5,7 @@ import ComingSoonGamesCard from "../ComingSoonGamesCard/ComingSoonGamesCard";
 const ComingSoonGames = () => {
   const [games, setGames] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/comingSoonGames")
+    fetch("https://game-loom-server-side.vercel.app/comingSoonGames")
       .then((res) => res.json())
       .then((data) => setGames(data));
   }, []);

@@ -43,7 +43,7 @@ const MyReviews = () => {
     };
     const updateReview = { ...newReview, userEmail };
 
-    fetch(`http://localhost:5000/reviews/${_id}`, {
+    fetch(`https://game-loom-server-side.vercel.app/reviews/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -82,7 +82,7 @@ const MyReviews = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/reviews/${_id}`, {
+        fetch(`https://game-loom-server-side.vercel.app/reviews/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

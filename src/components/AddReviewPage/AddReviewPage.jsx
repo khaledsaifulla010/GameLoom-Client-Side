@@ -38,7 +38,7 @@ const AddReviewPage = () => {
 
     // SEND REVIEW IN MONGODB //
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://game-loom-server-side.vercel.app/reviews", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

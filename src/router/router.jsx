@@ -21,7 +21,8 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/reviews/highest"),
+        loader: () =>
+          fetch("https://game-loom-server-side.vercel.app/reviews/highest"),
       },
       {
         path: "/highratedGames/:id",
@@ -29,7 +30,9 @@ const router = createBrowserRouter([
           <SingleHighestRatedGameDetails></SingleHighestRatedGameDetails>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/reviews/${params.id}`),
+          fetch(
+            `https://game-loom-server-side.vercel.app/reviews/${params.id}`
+          ),
       },
       {
         path: "/login",
@@ -50,7 +53,7 @@ const router = createBrowserRouter([
       {
         path: "/reviews",
         element: <AllReviews></AllReviews>,
-        loader: () => fetch("http://localhost:5000/reviews"),
+        loader: () => fetch("https://game-loom-server-side.vercel.app/reviews"),
       },
       {
         path: "/reviews/:id",
@@ -60,7 +63,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/reviews/${params.id}`),
+          fetch(
+            `https://game-loom-server-side.vercel.app/reviews/${params.id}`
+          ),
       },
       {
         path: "/myWatchlist/:userEmail",
@@ -71,7 +76,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5000/myWatchlist?userEmail=${params.userEmail}`
+            `https://game-loom-server-side.vercel.app/myWatchlist?userEmail=${params.userEmail}`
           ),
       },
       {
@@ -82,13 +87,13 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/reviews?userEmail=${params.userEmail}`),
+          fetch(
+            `https://game-loom-server-side.vercel.app/reviews?userEmail=${params.userEmail}`
+          ),
       },
       {
         path: "/myProfile",
-        element: (  
-            <MyProfile></MyProfile>
-        ),
+        element: <MyProfile></MyProfile>,
       },
     ],
   },

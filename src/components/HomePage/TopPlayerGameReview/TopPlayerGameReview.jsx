@@ -5,7 +5,7 @@ const TopPlayerGameReview = () => {
   const [reviews, setReview] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/topPlayerGameReview")
+    fetch("https://game-loom-server-side.vercel.app/topPlayerGameReview")
       .then((res) => res.json())
       .then((data) => setReview(data));
   }, []);

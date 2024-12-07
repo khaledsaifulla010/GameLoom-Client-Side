@@ -30,13 +30,16 @@ const SingleReviewDetailsCard = () => {
   };
 
   const handleAddToWatchList = () => {
-    fetch(`http://localhost:5000/myWatchlist?userEmail=${userEmail}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(singleGameDetails),
-    })
+    fetch(
+      `https://game-loom-server-side.vercel.app/myWatchlist?userEmail=${userEmail}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(singleGameDetails),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         toast.success(`Added ${gameName} in WatchList`, {
