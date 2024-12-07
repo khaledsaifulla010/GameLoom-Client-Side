@@ -9,14 +9,13 @@ import { Tooltip } from "react-tooltip";
 import { toast } from "react-toastify";
 
 const NavBar = () => {
-  const { user, logoutUser, userEmail } = useContext(AuthContext);
+  const { user, logoutUser, userEmail, email } = useContext(AuthContext);
 
   const handleLogout = () => {
     logoutUser().then(() => {
       toast.success("Successfully Logged Out !", { position: "top-center" });
     });
   };
-  
 
   return (
     <div className="font-2 rounded-xl p-2 border shadow-md hover:shadow-[0px_10px_30px_rgba(0,0,0,0.3)] transition-shadow duration-1000 ease-in-out">
@@ -34,7 +33,7 @@ const NavBar = () => {
             <NavLink to={"/reviews"}>All Reviews</NavLink>
             <NavLink to={"/addReview"}>Add Review</NavLink>
 
-            <NavLink to={"/myReviews"}>My Reviews</NavLink>
+            <NavLink to={`/myReviews/${email}`}>My Reviews</NavLink>
 
             <NavLink to={`/myWatchlist/${userEmail}`}>Game WatchList</NavLink>
           </ul>
