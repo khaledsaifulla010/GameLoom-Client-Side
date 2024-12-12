@@ -15,10 +15,6 @@ const AllReviews = () => {
   const [filterOption, setFilterOption] = useState([]);
   const [sortedReviews, setSortedReviews] = useState(reviews);
 
-  if (loading) {
-    return null;
-  }
-
   // HANDLE SORTING USING RATING & YEAR
   const handleSort = (option) => {
     setSortOption(option);
