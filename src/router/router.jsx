@@ -12,6 +12,7 @@ import GameWatchList from "../components/GameWatchList/GameWatchList";
 import MyReviews from "../components/MyReviews/MyReviews";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import MyProfile from "../components/MyProfile/MyProfile";
+import ContactUs from "../components/ContactUs/ContactUs";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/contactUs",
+        element: <ContactUs></ContactUs>,
       },
       {
         path: "/addReview",

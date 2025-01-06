@@ -7,7 +7,7 @@ import { AuthContext } from "../../../Providers/AuthProvider/AuthProvider";
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
 import { toast } from "react-toastify";
-import DarkWhiteMode from '../../DarkWhiteMode/DarkWhiteMode'
+import DarkWhiteMode from "../../DarkWhiteMode/DarkWhiteMode";
 
 const NavBar = () => {
   const { user, logoutUser, userEmail } = useContext(AuthContext);
@@ -17,7 +17,7 @@ const NavBar = () => {
     logoutUser().then(() => {
       toast.success("Successfully Logged Out !", { position: "top-center" });
     });
-    navigate("/");
+    navigate(0);
   };
 
   return (
@@ -34,11 +34,16 @@ const NavBar = () => {
           <ul className="menu menu-horizontal px-1 flex items-center gap-8 font-bold text-base text-red-600">
             <NavLink to={"/"}>Home</NavLink>
             <NavLink to={"/reviews"}>All Reviews</NavLink>
-            <NavLink to={"/addReview"}>Add Review</NavLink>
+            {user && <NavLink to={"/addReview"}>Add Review</NavLink>}
 
-            <NavLink to={`/myReviews/${userEmail}`}>My Reviews</NavLink>
+            {user && (
+              <NavLink to={`/myReviews/${userEmail}`}>My Reviews</NavLink>
+            )}
 
-            <NavLink to={`/myWatchlist/${userEmail}`}>Game WatchList</NavLink>
+            {user && (
+              <NavLink to={`/myWatchlist/${userEmail}`}>Game WatchList</NavLink>
+            )}
+             <NavLink to={"/contactUs"}>Contact Us</NavLink>
             <DarkWhiteMode></DarkWhiteMode>
           </ul>
         </div>
@@ -69,12 +74,6 @@ const NavBar = () => {
               tabIndex={0}
               className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow border-2 gap-y-2"
             >
-              <Link
-                to={"/login"}
-                className="border p-1 w-full rounded-xl text-purple-500 bg-purple-200 border-purple-300 font-bold text-lg shadow-md transition duration-500 ease-in-out transform hover:scale-105 active:scale-95 text-center"
-              >
-                Login
-              </Link>
               {user && (
                 <Link
                   className="border p-1 w-full rounded-xl text-blue-500 bg-blue-200 border-blue-300 font-bold text-lg shadow-md transition duration-500 ease-in-out transform hover:scale-105 active:scale-95 text-center"
@@ -83,6 +82,13 @@ const NavBar = () => {
                   My Profile
                 </Link>
               )}
+              <Link
+                to={"/login"}
+                className="border p-1 w-full rounded-xl text-purple-500 bg-purple-200 border-purple-300 font-bold text-lg shadow-md transition duration-500 ease-in-out transform hover:scale-105 active:scale-95 text-center"
+              >
+                Login
+              </Link>
+
               {user && (
                 <button
                   onClick={handleLogout}
