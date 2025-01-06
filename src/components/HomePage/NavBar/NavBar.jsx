@@ -44,6 +44,7 @@ const NavBar = () => {
               <NavLink to={`/myWatchlist/${userEmail}`}>Game WatchList</NavLink>
             )}
              <NavLink to={"/contactUs"}>Contact Us</NavLink>
+             <NavLink to={"/faq"}>FAQ</NavLink>
             <DarkWhiteMode></DarkWhiteMode>
           </ul>
         </div>

@@ -13,6 +13,7 @@ import MyReviews from "../components/MyReviews/MyReviews";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import MyProfile from "../components/MyProfile/MyProfile";
 import ContactUs from "../components/ContactUs/ContactUs";
+import FAQ from "../components/FAQ/FAQ";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -99,7 +100,10 @@ const router = createBrowserRouter([
       {
         path: "/myProfile",
         element: <MyProfile></MyProfile>,
-      },
+      },{
+        path:'/faq',
+        element:<FAQ></FAQ>
+      }
     ],
   },
 ]);
