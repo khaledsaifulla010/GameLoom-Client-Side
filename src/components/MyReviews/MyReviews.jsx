@@ -103,19 +103,19 @@ const MyReviews = () => {
   };
 
   return (
-    <div className="mb-24 font-1">
+    <div className=" mt-24 mb-24 font-1">
       <Helmet>
         <title>GameLoom || MyReviews</title>
       </Helmet>
       <h1
         style={{ animationDuration: "4s" }}
-        className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-700 animate__animated
+        className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-purple-600 animate__animated
          animate__backInLeft "
       >
         My Game Review List
       </h1>
       {filteredReviews && filteredReviews.length > 0 ? (
-        <div className="overflow-x-auto mt-12 mb-72 px-8">
+        <div className="overflow-x-auto mt-12  px-8">
           <div>
             <div className="rounded-lg shadow-lg border border-gray-300">
               <table className="table w-full border-collapse">

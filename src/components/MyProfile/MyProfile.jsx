@@ -11,11 +11,18 @@ const MyProfile = () => {
   }
 
   return (
-    <div className="mb-36 mt-12">
+    <div className="mb-24 mt-24">
       <Helmet>
         <title>GameLoom || MyProfile</title>
       </Helmet>
-      <div className="card border max-w-[900px] mx-auto rounded-xl shadow-lg bg-white">
+      <h1
+        style={{ animationDuration: "3s" }}
+        className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-purple-600 animate__animated
+         animate__backInLeft"
+      >
+        My Profile
+      </h1>
+      <div className="card border max-w-[900px] mx-auto rounded-xl shadow-lg bg-white mt-12">
         <div className="flex items-center ml-12 mt-8 gap-4">
           {user && user?.photoURL ? (
             <img

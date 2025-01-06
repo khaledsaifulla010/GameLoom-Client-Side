@@ -48,10 +48,10 @@ const Login = () => {
       <Helmet>
         <title>GameLoom || Login</title>
       </Helmet>
-      <div className="w-[1200px] ml-16 rounded-xl mt-12">
+      <div className="w-[1200px] ml-16 rounded-xl mt-24 mb-24">
         <h1
-          style={{ animationDuration: "4s" }}
-          className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-600 -mb-4 p-8 ml-[500px] animate__animated
+          style={{ animationDuration: "3s" }}
+          className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-purple-600 -mb-4 p-8 ml-[500px] animate__animated
          animate__backInDown "
         >
           Please Login
@@ -95,10 +95,7 @@ const Login = () => {
                 </button>
               </div>
               <label className="label">
-                <Link
-                  to={"/forgetPassword"}
-                  className="label-text-alt text-red-500 font-semibold text-base underline"
-                >
+                <Link className="label-text-alt text-red-500 font-semibold text-base underline">
                   Forgot password?
                 </Link>
               </label>

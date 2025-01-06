@@ -63,15 +63,15 @@ const Register = () => {
       <Helmet>
         <title>GameLoom || Register</title>
       </Helmet>
-      <div className="w-[1200px] ml-28 rounded-xl mt-12">
+      <div className="w-[1200px] ml-28 rounded-xl mt-24 mb-24">
         <h1
           style={{ animationDuration: "4s" }}
-          className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-green-600 -mb-6 p-8 ml-[500px] animate__animated
+          className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-purple-600 -mb-6 p-8 ml-[500px] animate__animated
          animate__backInDown"
         >
           Please Register
         </h1>
-        <div className="flex items-center justify-center mb-36 mt-12">
+        <div className="flex items-center justify-center  mt-12">
           {/* Lottie Animation */}
           <div>
             <Lottie

@@ -54,13 +54,13 @@ const AddReviewPage = () => {
   };
 
   return (
-    <div className="mt-12 mb-24 font-5">
+    <div className="mt-24 mb-24 font-5">
       <Helmet>
         <title>GameLoom || AddReviews</title>
       </Helmet>
       <h1
-        style={{ animationDuration: "4s" }}
-        className="mt-4 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-pink-600 animate__animated
+        style={{ animationDuration: "3s" }}
+        className="mt-4 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-purple-600 animate__animated
          animate__backInLeft "
       >
         Please Review a Game

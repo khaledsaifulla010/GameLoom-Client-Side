@@ -49,10 +49,10 @@ const SingleReviewDetailsCard = () => {
   };
 
   return (
-    <div className="font-5">
+    <div className="font-5 mt-24">
       <h1
         style={{ animationDuration: "4s" }}
-        className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-rose-600 animate__animated
+        className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-purple-600 animate__animated
          animate__backInLeft"
       >
         Review Details of "{gameName}"
@@ -99,7 +99,7 @@ const SingleReviewDetailsCard = () => {
               <div className="divider mt-6"></div>
               <p className="mt-4 text-gray-600 text-lg font-bold text-justify">
                 <strong className="text-orange-600">
-                  Review Description :
+                  Review Description :{" "}
                 </strong>
                 {reviewDescription}
               </p>

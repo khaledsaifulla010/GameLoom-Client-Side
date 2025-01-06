@@ -22,9 +22,9 @@ const SingleHighestRatedGameDetails = () => {
   };
 
   return (
-    <div className="font-5">
+    <div className="font-5 mt-24">
       <h1
-        style={{ animationDuration: "6s" }}
+        style={{ animationDuration: "3s" }}
         className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-purple-600 animate__animated
          animate__backInLeft "
       >

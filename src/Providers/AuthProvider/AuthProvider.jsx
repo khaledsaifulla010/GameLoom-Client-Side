@@ -48,7 +48,7 @@ const AuthProvider = ({ children }) => {
         setUserEmail(currentUser.email);
         setLoading(false);
       } else {
-        setUser(null);
+        setLoading(false)
       }
     });
     return () => {

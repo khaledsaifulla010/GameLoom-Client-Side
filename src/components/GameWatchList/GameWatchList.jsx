@@ -4,19 +4,19 @@ import { Helmet } from "react-helmet-async";
 const GameWatchList = () => {
   const allWatchListData = useLoaderData();
   return (
-    <div className="font-1">
+    <div className="font-1 mt-24 mb-24">
       <Helmet>
         <title>GameLoom || GameWatchList</title>
       </Helmet>
       <h1
-        style={{ animationDuration: "4s" }}
-        className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-700 animate__animated
+        style={{ animationDuration: "3s" }}
+        className="mt-12 text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-purple-600 animate__animated
          animate__backInLeft"
       >
         My Game Watch List
       </h1>
       {allWatchListData && allWatchListData.length > 0 ? (
-        <div className="overflow-x-auto mt-12 mb-72 px-8">
+        <div className="overflow-x-auto mt-12 px-8">
           <div>
             <div className="rounded-lg shadow-lg border border-gray-300">
               <table className="table w-full border-collapse">

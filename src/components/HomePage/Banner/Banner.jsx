@@ -6,7 +6,7 @@ import { Typewriter } from "react-simple-typewriter";
 
 const Banner = () => {
   return (
-    <div className="mt-12">
+    <div className="mt-24">
       <div className="carousel w-[1400px] ml-12 font-1">
         <div id="slide1" className="carousel-item relative w-full">
           <img

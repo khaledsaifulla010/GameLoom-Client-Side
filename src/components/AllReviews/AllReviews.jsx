@@ -43,7 +43,7 @@ const AllReviews = () => {
   const finalReviews = filterOption.length > 0 ? filterOption : sortedReviews;
 
   return (
-    <div className="mt-12 mb-24 font-4">
+    <div className="mt-24 mb-24 font-4">
       <Helmet>
         <title>GameLoom || AllReviews</title>
       </Helmet>
@@ -60,8 +60,8 @@ const AllReviews = () => {
         )}
         <div>
           <h1
-            style={{ animationDuration: "4s" }}
-            className=" text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-teal-600 animate__animated animate__backInDown "
+            style={{ animationDuration: "3s" }}
+            className=" text-center text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-purple-600 animate__animated animate__backInDown "
           >
             All Reviews
           </h1>
