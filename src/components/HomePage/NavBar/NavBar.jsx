@@ -21,7 +21,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="font-2 rounded-xl p-2 border shadow-md hover:shadow-[0px_10px_30px_rgba(0,0,0,0.3)] transition-shadow duration-1000 ease-in-out">
+    <div className="font-2 rounded-xl p-2 border shadow-md hover:shadow-[0px_10px_30px_rgba(0,0,0,0.3)] transition-shadow duration-1000 ease-in-out fixed left-0 right-0 z-10 top-0">
       <div className="navbar bg-base-100">
         <Link className="navbar-start">
           <img
@@ -43,8 +43,8 @@ const NavBar = () => {
             {user && (
               <NavLink to={`/myWatchlist/${userEmail}`}>Game WatchList</NavLink>
             )}
-             <NavLink to={"/contactUs"}>Contact Us</NavLink>
-             <NavLink to={"/faq"}>FAQ</NavLink>
+            <NavLink to={"/contactUs"}>Contact Us</NavLink>
+            <NavLink to={"/faq"}>FAQ</NavLink>
             <DarkWhiteMode></DarkWhiteMode>
           </ul>
         </div>

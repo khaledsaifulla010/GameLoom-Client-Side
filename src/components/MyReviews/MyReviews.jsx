@@ -103,7 +103,7 @@ const MyReviews = () => {
   };
 
   return (
-    <div className=" mt-24 mb-24 font-1">
+    <div className=" mt-24 mb-24 font-1 py-10">
       <Helmet>
         <title>GameLoom || MyReviews</title>
       </Helmet>

@@ -54,7 +54,7 @@ const AddReviewPage = () => {
   };
 
   return (
-    <div className="mt-24 mb-24 font-5">
+    <div className="mt-24 mb-24 font-5 py-10">
       <Helmet>
         <title>GameLoom || AddReviews</title>
       </Helmet>

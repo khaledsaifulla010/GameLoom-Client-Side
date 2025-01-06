@@ -48,7 +48,7 @@ const Login = () => {
       <Helmet>
         <title>GameLoom || Login</title>
       </Helmet>
-      <div className="w-[1200px] ml-16 rounded-xl mt-24 mb-24">
+      <div className="w-[1200px] ml-16 rounded-xl mt-24 mb-24 py-10">
         <h1
           style={{ animationDuration: "3s" }}
           className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-purple-600 -mb-4 p-8 ml-[500px] animate__animated

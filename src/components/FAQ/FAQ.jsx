@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 
 const FAQ = () => {
   return (
-    <div className="mt-24 mb-24 font-5">
+    <div className="mt-24 mb-24 font-5 py-10">
       <Helmet>
         <title>GameLoom || FAQ</title>
       </Helmet>

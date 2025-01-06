@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 
 const ContactUs = () => {
   return (
-    <div className="mt-24 mb-24 font-5">
+    <div className="mt-24 mb-24 font-5 py-10">
       <Helmet>
         <title>GameLoom || Contact Us</title>
       </Helmet>

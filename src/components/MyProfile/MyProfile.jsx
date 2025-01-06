@@ -11,7 +11,7 @@ const MyProfile = () => {
   }
 
   return (
-    <div className="mb-24 mt-24">
+    <div className="mb-24 mt-24 py-10">
       <Helmet>
         <title>GameLoom || MyProfile</title>
       </Helmet>

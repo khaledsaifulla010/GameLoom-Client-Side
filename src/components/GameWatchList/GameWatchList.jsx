@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 const GameWatchList = () => {
   const allWatchListData = useLoaderData();
   return (
-    <div className="font-1 mt-24 mb-24">
+    <div className="font-1 mt-24 mb-24 py-10">
       <Helmet>
         <title>GameLoom || GameWatchList</title>
       </Helmet>

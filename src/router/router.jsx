@@ -100,10 +100,11 @@ const router = createBrowserRouter([
       {
         path: "/myProfile",
         element: <MyProfile></MyProfile>,
-      },{
-        path:'/faq',
-        element:<FAQ></FAQ>
-      }
+      },
+      {
+        path: "/faq",
+        element: <FAQ></FAQ>,
+      },
     ],
   },
 ]);

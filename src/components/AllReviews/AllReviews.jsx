@@ -43,7 +43,7 @@ const AllReviews = () => {
   const finalReviews = filterOption.length > 0 ? filterOption : sortedReviews;
 
   return (
-    <div className="mt-24 mb-24 font-4">
+    <div className="mt-24 py-10 mb-24 font-4">
       <Helmet>
         <title>GameLoom || AllReviews</title>
       </Helmet>
