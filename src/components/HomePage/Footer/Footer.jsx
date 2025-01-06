@@ -8,8 +8,8 @@ const Footer = () => {
       <footer className="footer text-base-content p-10">
         <aside className="text-white text-center">
           <img
-            className="w-28 rounded-xl ml-16 animate__animated animate__slideInLeft animate__infinite"
-            style={{ animationDuration: "8s" }}
+            className="w-28 rounded-xl ml-16 animate__animated animate__pulse animate__infinite"
+            style={{ animationDuration: "4s" }}
             src={logo}
           />
           <p className="font-semibold text-base">

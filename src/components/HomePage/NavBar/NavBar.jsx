@@ -25,8 +25,8 @@ const NavBar = () => {
       <div className="navbar bg-base-100">
         <Link className="navbar-start">
           <img
-            className="w-28 animate__animated animate__slideInDown animate__infinite "
-            style={{ animationDuration: "8s" }}
+            className="w-28 animate__animated animate__pulse animate__infinite "
+            style={{ animationDuration: "4s" }}
             src={logo}
           />
         </Link>
